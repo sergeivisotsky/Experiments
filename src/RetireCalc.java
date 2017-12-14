@@ -5,18 +5,10 @@ public class RetireCalc {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your age: ");
         int age = sc.nextInt();
-        /*if (age >= 65) {
-            System.out.print("You are old! Bro! You should go for the retirement! :)");
-        } else {
-            System.out.print("You are pretty young and sexy!!! :)" + "\n" + "You should work at least: " + (65 - age));
-        }*/
-        /**
-         * The same idea but now with the switch statement
-         */
 
-        if (age < 0) {
-            System.out.print("Your age shouldn't be negative number! :))))");
-            return;
+        while (age < 0) {
+            System.out.print("Your age shouldn't be negative number! :))))" + "\n" + "Enter your real age: ");
+            age = sc.nextInt();
         }
 
         switch (age) {
