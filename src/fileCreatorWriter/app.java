@@ -9,8 +9,6 @@ import java.util.Scanner;
 public class app {
 
     private static final String dir = "D:\\Users\\Sergei\\Documents\\JavaProjects\\TestApp\\src\\fileCreatorWriter\\createdFiles";
-    private static String writableText;
-
 
     private static void fileCreatorAndWriter() throws IOException {
         File fileCreator = new File(dir, "newFile.txt");
@@ -19,7 +17,7 @@ public class app {
 
         Scanner sc = new Scanner(System.in);
             System.out.print("Input file text: ");
-            writableText = sc.nextLine();
+        String writableText = sc.nextLine();
         sc.close();
 
         bw.write(writableText);
@@ -31,6 +29,4 @@ public class app {
     public static void main(String[] args) throws IOException {
         fileCreatorAndWriter();
     }
-
-
 }
