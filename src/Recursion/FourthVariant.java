@@ -2,8 +2,14 @@ package Recursion;
 
 public class FourthVariant {
     public static void main(String[] args) {
-        int a = 3;
-        System.out.print(fibonacci(a));
+        int a = 1;
+        while (true) {
+            System.out.println(fibonacci(a));
+            a++;
+            if (a == 100) {
+                break;
+            }
+        }
     }
 
     private static int fibonacci(int a) {
