@@ -48,3 +48,8 @@ Temporary Items
 
 phoneBookApp_ArthurApp.java
 TestApp.iml
+
+.idea/*
+.settings/*
+/out/*
+/lib/*
