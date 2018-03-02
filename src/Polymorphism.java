@@ -6,7 +6,7 @@ public class Polymorphism {
 
         Car car = new Car();
 
-        car.carType(new passenger("Male"));
+        car.carType(new Polymorphism());
 
         car.getNumOfSeats();
         passenger.getMan();
@@ -15,7 +15,7 @@ public class Polymorphism {
 
 class Car {
 
-    public void carType(passenger CarType) {
+    public void carType(Polymorphism CarType) {
         System.out.print(CarType);
     }
 
