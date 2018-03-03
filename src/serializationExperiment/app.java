@@ -14,7 +14,7 @@ public class app {
         human.age = 25;
         final String FILE =
                 "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
-                        "TestApp\\src\\serializationExperiment\\newFile.txt";
+                        "TestApp\\src\\serializationExperiment\\newFile.bin";
 //        Serialization
         try {
             FileOutputStream fileOutputStream =
