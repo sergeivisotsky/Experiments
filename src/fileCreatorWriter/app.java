@@ -5,10 +5,12 @@ import java.util.Scanner;
 
 public class app {
 
-    private static final String dir = "D:\\Users\\Sergei\\Documents\\JavaProjects\\TestApp\\src\\fileCreatorWriter\\createdFiles";
+    private static final String DIR =
+            "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
+                    "TestApp\\src\\fileCreatorWriter\\createdFiles";
 
     private static void fileCreatorAndWriter() throws IOException {
-        File fileCreator = new File(dir, "newFile.txt");
+        File fileCreator = new File(DIR, "newFile.txt");
         /*FileWriter fw = new FileWriter(fileCreator.getAbsoluteFile());
         BufferedWriter bw = new BufferedWriter(fw);*/
         FileReader fin = new FileReader(fileCreator);
