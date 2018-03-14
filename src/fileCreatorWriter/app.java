@@ -1,39 +1,24 @@
 package fileCreatorWriter;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class app {
-
-    private static final String DIR =
-            "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
-                    "TestApp\\src\\fileCreatorWriter\\createdFiles";
-
-    private static void fileCreatorAndWriter() throws IOException {
+    private void fileCreatorAndWriter() throws IOException {
+        final String DIR =
+                "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
+                        "TestApp\\src\\fileCreatorWriter\\createdFiles";
         File fileCreator = new File(DIR, "newFile.txt");
-        /*FileWriter fw = new FileWriter(fileCreator.getAbsoluteFile());
-        BufferedWriter bw = new BufferedWriter(fw);*/
-        FileReader fin = new FileReader(fileCreator);
+        FileWriter fw = new FileWriter(fileCreator.getAbsoluteFile());
+        BufferedWriter bw = new BufferedWriter(fw);
 
-        Scanner sc = new Scanner(fin);
-//            System.out.print("Input file text: ");
-        /*String writableText = sc.nextLine();
-        sc.close();
-
-        bw.write(writableText);
-
-        System.out.println("File with text created!");*/
-        String s;
-        while (sc.hasNextLine()) {
-            s = sc.nextLine();
-            System.out.println(s);
-        }
-
-        sc.close();
-//        bw.close();
+        BufferedReader reader =
+                new BufferedReader(
+                        new InputStreamReader(System.in));
+        String text = reader.readLine();
     }
 
     public static void main(String[] args) throws IOException {
-        fileCreatorAndWriter();
+        app fileOperations = new app();
+        fileOperations.fileCreatorAndWriter();
     }
 }
