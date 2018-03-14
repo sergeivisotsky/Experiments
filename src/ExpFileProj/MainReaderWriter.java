@@ -14,7 +14,7 @@ public class MainReaderWriter {
         BufferedReader reader =
                 new BufferedReader(
                         new FileReader(DIR));
-        ArrayList<Object> dataStorage = new ArrayList<>();
+//        ArrayList<Object> dataStorage = new ArrayList<>();
 
         String data;
         while ((data = reader.readLine()) != null) {
