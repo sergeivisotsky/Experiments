@@ -14,7 +14,7 @@ public class MainReaderWriter {
         BufferedReader reader =
                 new BufferedReader(
                         new FileReader(DIR));
-//        ArrayList<Object> dataStorage = new ArrayList<>();
+        ArrayList<Object> dataStorage = new ArrayList<>();
 
         String data;
         while ((data = reader.readLine()) != null) {
@@ -22,13 +22,12 @@ public class MainReaderWriter {
         }
 
         /*while (reader.readLine() != null) {
-            data = reader.readLine();
-            dataStorage.add(data);
-        }
-
-        for (Object getData : tempArray) {
-            System.out.println(getData);
+            dataStorage.add(str);
         }*/
+
+        for (Object getData : dataStorage) {
+            System.out.println(getData);
+        }
     }
 
     public static void main(String[] args) throws IOException {
