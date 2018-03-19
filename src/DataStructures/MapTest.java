@@ -1,82 +1,50 @@
 package DataStructures;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Collection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class MapTest {
     static class Fields {
         String key;
-        int value;
+        String value;
+        int quantity;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Fields fields = new Fields();
-        Map<String, String> animals = new Map<String, String>() {
-            @Override
-            public int size() {
-                return 0;
-            }
-
-            @Override
-            public boolean isEmpty() {
-                return false;
-            }
-
-            @Override
-            public boolean containsKey(Object key) {
-                return false;
-            }
-
-            @Override
-            public boolean containsValue(Object value) {
-                return false;
-            }
-
-            @Override
-            public String get(Object key) {
-                return null;
-            }
-
-            @Override
-            public String put(String key, String value) {
-                return null;
-            }
-
-            @Override
-            public String remove(Object key) {
-                return null;
-            }
-
-            @Override
-            public void putAll(@NotNull Map<? extends String, ? extends String> m) {
-
-            }
-
-            @Override
-            public void clear() {
-
-            }
-
-            @NotNull
-            @Override
-            public Set<String> keySet() {
-                return null;
-            }
-
-            @NotNull
-            @Override
-            public Collection<String> values() {
-                return null;
-            }
-
-            @NotNull
-            @Override
-            public Set<Entry<String, String>> entrySet() {
-                return null;
-            }
-        };
+        BufferedReader reader =
+                new BufferedReader(
+                        new InputStreamReader(System.in));
+        Map<String, String> animals = new HashMap<>();
+        System.out.print("Animal quantity: ");
+        fields.quantity =
+                Integer.parseInt(
+                        reader.readLine());
+        for (int i = 0; i < fields.quantity; i++) {
+            System.out.print("Input " + (i + 1) + " key: ");
+            fields.key = reader.readLine();
+            System.out.print("Input " + (i + 1) + " value: ");
+            fields.value = reader.readLine();
+            animals.put(fields.key, fields.value);
+        }
+        System.out.print("Would you like to get any animal value (y/n)? ");
+        String rhetoricalAnswer = reader.readLine();
+        switch (rhetoricalAnswer) {
+            case "y":
+            case "Y":
+                System.out.print("What animal would you like to get?" + "\n" + "Key: ");
+                String animalKey = reader.readLine();
+                System.out.println(animals.get(animalKey));
+                break;
+            case "n":
+            case "N":
+                return;
+            default:
+                System.out.println("Error!");
+                break;
+        }
     }
 }
