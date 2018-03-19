@@ -30,21 +30,25 @@ public class MapTest {
             fields.value = reader.readLine();
             animals.put(fields.key, fields.value);
         }
+        boolean endSession = false;
+        do {
         System.out.print("Would you like to get any animal value (y/n)? ");
         String rhetoricalAnswer = reader.readLine();
-        switch (rhetoricalAnswer) {
-            case "y":
-            case "Y":
-                System.out.print("What animal would you like to get?" + "\n" + "Key: ");
-                String animalKey = reader.readLine();
-                System.out.println(animals.get(animalKey));
-                break;
-            case "n":
-            case "N":
-                return;
-            default:
-                System.out.println("Error!");
-                break;
-        }
+            switch (rhetoricalAnswer) {
+                case "y":
+                case "Y":
+                    System.out.print("What animal would you like to get?" + "\n" + "Key: ");
+                    fields.key = reader.readLine();
+                    System.out.println(animals.get(fields.key));
+                    break;
+                case "n":
+                case "N":
+                    endSession = true;
+                    break;
+                default:
+                    System.out.println("Error!");
+                    break;
+            }
+        } while (!endSession);
     }
 }
