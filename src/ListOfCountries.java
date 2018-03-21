@@ -6,12 +6,14 @@ public class ListOfCountries {
         start.run();
     }
 
-    public static void run() {
+    private void run() {
         int lineNumber = 1;
         String[] locales = Locale.getISOCountries();
         for (String countryCode: locales) {
             Locale obj = new Locale("", countryCode);
-            System.out.println(lineNumber++ + ". " + "Country Code: " + obj.getCountry() + " " + "Country Name: " + obj.getDisplayCountry());
+            System.out.println(lineNumber++ + ". " +
+                    "Country Code: " + obj.getCountry() + " " +
+                    "Country Name: " + obj.getDisplayCountry());
         }
         System.out.println("Done");
     }
