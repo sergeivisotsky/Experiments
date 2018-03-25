@@ -1,4 +1,4 @@
-/**
+package ProgrammingStudy; /**
  * @author Artur Kuzmik - coursemate
  */
 
