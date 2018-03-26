@@ -2,4 +2,5 @@
 .idea/*
 .settings/*
 /out/*
+/target/*
 /lib/*
