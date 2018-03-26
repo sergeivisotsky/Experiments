@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 public class lambdaExpressions {
     public static void execution(Runnable runnable) {
         System.out.println("Hello space!");

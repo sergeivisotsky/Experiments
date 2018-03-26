@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 public class ArraySorting {
     public static int LinearArraySorting(int[] A, int n, int x) {
         int last = A[n - 1];

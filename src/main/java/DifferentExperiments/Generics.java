@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 public class Generics {
     CarType<String> carType = new CarType<>();
 

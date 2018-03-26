@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 /**
  * Memory performance test
  * Loop which reserves memory 1 mb 100 000 times

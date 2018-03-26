@@ -1,4 +1,5 @@
-import java.math.BigInteger;
+package DifferentExperiments;
+
 import java.util.Scanner;
 
 public class ObjectClass {

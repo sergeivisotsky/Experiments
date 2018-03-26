@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 public class SubClasses {
     public static void main(String[] args) {
         SubClass subClassObject = new SubClass() {

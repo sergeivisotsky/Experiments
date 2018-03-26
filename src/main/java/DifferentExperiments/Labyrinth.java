@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 import java.util.Scanner;
 
 public class Labyrinth {

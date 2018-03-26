@@ -1,3 +1,5 @@
+package DifferentExperiments;
+
 import java.util.Random;
 
 public class Methods {
