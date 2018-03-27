@@ -30,11 +30,11 @@ public class human {
         return quality;
     }
 
-    public String getName() {
+    public String getCountryCode() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setCountryCode(String name) {
         this.name = name;
     }*/
 

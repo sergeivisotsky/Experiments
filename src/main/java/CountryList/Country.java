@@ -1,37 +1,36 @@
 package CountryList;
 
-import java.util.List;
-
 public class Country {
-    private String name;
-    private String language;
+    private String countryCode;
+    private String countryName;
 
-    public Country(String name, String language) {
-        this.name = name;
-        this.language = language;
+    public Country(String countryCode,
+                   String countryName) {
+        this.countryCode = countryCode;
+        this.countryName = countryName;
     }
 
-    public String getName() {
-        return name;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getCountryName() {
+        return countryName;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
     }
 
     @Override
     public String toString() {
         return "Country{" +
-                "name=" + name +
-                ", language=" + language +
+                "countryCode='" + countryCode + '\'' +
+                ", countryName='" + countryName + '\'' +
                 '}';
     }
 }

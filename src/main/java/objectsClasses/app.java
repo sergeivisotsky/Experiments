@@ -5,7 +5,7 @@ public class app {
         human man = new human(50, 80, "John");
         /*man.setQuantity(50);
         man.setQuality(80);
-        man.setName("John");*/
+        man.setCountryCode("John");*/
         System.out.print(man);
     }
 }

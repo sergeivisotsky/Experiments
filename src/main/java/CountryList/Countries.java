@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Locale;
 
 class InitializeCountry {
-    private List<String> countriesNames = Arrays.asList(Locale.getISOCountries());
-    private List<String> languages = Arrays.asList(Locale.getISOLanguages());
+    private List<String> ISOCountries = Arrays.asList(Locale.getISOCountries());
 
     public void writeData() {
-        for (String countryName : countriesNames) {
-            for (String language : languages) {
-                Country country = new Country(countryName, language);
-                System.out.println(country);
-            }
+        for (String ISOctrs : ISOCountries) {
+            Locale locale = new Locale("", ISOctrs);
+            Country country = new Country(
+                    locale.getCountry(),
+                    locale.getDisplayCountry());
+            System.out.println(country);
         }
     }
 }
