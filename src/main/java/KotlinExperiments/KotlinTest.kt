@@ -1,4 +1,4 @@
-package DifferentExperiments
+package KotlinExperiments
 
 class HelloWorld {
     val developer = 50;
