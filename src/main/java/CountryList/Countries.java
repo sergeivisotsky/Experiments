@@ -15,6 +15,8 @@ class InitializeCountry {
                     locale.getDisplayCountry());
             System.out.println(country);
         }
+
+        System.out.println("\nDone!");
     }
 }
 
