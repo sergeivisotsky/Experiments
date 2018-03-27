@@ -1,23 +1,27 @@
 package DifferentExperiments;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class LinearSearch {
-    public static int LinearSearch(int n, int[] a) {
-        for (int i = 1; i < a.length; i++) {
-            if (a[i] == n) {
-                return i;
+    public static int linearSearch(int[] array, int number) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                return (i + 1);
             }
         }
-        return -1;
+
+        return Integer.parseInt("Element not found");
     }
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int[] a = {5, 15, 28, 35, 47, 59};
-        int n = input.nextInt();
-        int i = LinearSearch(n, a);
-        System.out.print(i);
-        input.close();
+    public static void main(String[] args) throws IOException {
+        BufferedReader userInput =
+                new BufferedReader(
+                        new InputStreamReader(System.in));
+        int[] myArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        System.out.print("Input searchable number: ");
+        int number = Integer.parseInt(userInput.readLine());
+        System.out.println(linearSearch(myArray, number));
     }
 }
