@@ -1,4 +1,4 @@
-package DifferentExperiments;
+package ArraySearchAlgorithms;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +22,9 @@ public class LinearSearch {
         int[] myArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
         System.out.print("Input searchable number: ");
         int number = Integer.parseInt(userInput.readLine());
+        long before = System.nanoTime();
         System.out.println(linearSearch(myArray, number));
+        long after = System.nanoTime();
+        System.out.println(after - before);
     }
 }
