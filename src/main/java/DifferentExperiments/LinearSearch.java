@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class LinearSearch {
-    public static int linearSearch(int[] array, int number) {
+    private static int linearSearch(int[] array, int number) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
                 return (i + 1);
