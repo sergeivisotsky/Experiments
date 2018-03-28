@@ -11,7 +11,7 @@ public class LinearSearch {
                 return (i + 1);
             }
         }
-        return Integer.parseInt("Element not found");
+        return Integer.parseInt("Element not found!");
     }
 
     public static void main(String[] args) throws IOException {
