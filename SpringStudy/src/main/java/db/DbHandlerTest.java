@@ -1,6 +1,6 @@
-package SpringStudy.db;
+package db;
 
-import org.junit.AfterClass;
+import org.testng.annotations.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

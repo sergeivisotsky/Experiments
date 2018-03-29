@@ -1,5 +1,3 @@
-package SpringStudy;
-
 public class Human {
     private String name;
     private String surname;

@@ -1,4 +1,4 @@
-package SpringStudy.db.Interfaces;
+package db.Interfaces;
 
 public interface IHumanDataInsertion {
 

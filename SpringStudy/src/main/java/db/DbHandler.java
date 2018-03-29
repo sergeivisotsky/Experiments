@@ -1,4 +1,4 @@
-package SpringStudy.db;
+package db;
 
 import java.io.File;
 import java.sql.Connection;

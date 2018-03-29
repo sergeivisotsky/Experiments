@@ -1,4 +1,4 @@
-package SpringStudy.db;
+package db;
 
 public class DbConstants {
     public static final String DB_FILE_PATH = "data_resources";
