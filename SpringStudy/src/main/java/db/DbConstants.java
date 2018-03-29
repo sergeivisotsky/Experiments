@@ -1,7 +1,7 @@
 package db;
 
 public class DbConstants {
-    public static final String DB_FILE_PATH = "data_resources";
+    public static final String DB_FILE_PATH = "src/main/data_resources";
     public static final String DB_FILE_NAME = "main_data";
     public static final String DB_TABLE_NAME = "human_data";
     public static final String TABLE_NAME = "name";
