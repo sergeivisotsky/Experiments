@@ -1,5 +1,7 @@
 package DifferentExperiments;
 
+import java.util.Objects;
+
 class Developer {
     private String name;
     private String surname;
@@ -14,7 +16,7 @@ class Developer {
 
     @Override
     public int hashCode() {
-        return age;
+        return Objects.hashCode(this.name);
     }
 }
 
