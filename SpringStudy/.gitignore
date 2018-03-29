@@ -1,6 +1,6 @@
 *.iml
 .idea/*
-.lib/*
+/lib/*
 .settings/*
 /out/*
 /target/*
