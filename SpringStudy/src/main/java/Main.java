@@ -1,3 +1,5 @@
+import db.User;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,11 +9,11 @@ public class Main {
             new BufferedReader(new InputStreamReader(System.in));
 
     public void insertUserData() throws IOException {
-        System.out.print("User name: ");
+        System.out.print("db.User name: ");
         String userName = input.readLine();
-        System.out.println("User surname: ");
+        System.out.println("db.User surname: ");
         String userSurname = input.readLine();
-        System.out.println("User age: ");
+        System.out.println("db.User age: ");
         int userAge = Integer.parseInt(input.readLine());
         User user = new User(userName, userSurname, userAge);
 
