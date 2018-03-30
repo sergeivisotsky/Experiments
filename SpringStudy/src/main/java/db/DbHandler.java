@@ -26,4 +26,8 @@ public class DbHandler {
             System.exit(0);
         }
     }
+
+    public void insertUserData(User user) {
+
+    }
 }
