@@ -29,7 +29,6 @@ class ThreadImplementationTest {
         System.out.println("5 seconds after...");
 
         testThread.interrupt();
-
         System.out.println("Thread was interrupted!");
     }
 }
