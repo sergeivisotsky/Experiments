@@ -17,7 +17,7 @@ public class ThreadImplementation implements Runnable {
             threadCounter--;
 
             try {
-                Thread.sleep(1_000);
+                Thread.sleep(50_000);
             } catch (InterruptedException e) {
                 System.out.println("Interruption!");
                 return;
