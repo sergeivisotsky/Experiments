@@ -69,20 +69,20 @@ public class CharacterMap {
     }
 
     public static void main(String[] args) {
-        CharacterMap characlers = new CharacterMap();
-        characlers.firstTask();
+        CharacterMap characters = new CharacterMap();
+        characters.firstTask();
         System.out.println();
-        characlers.secondTask();
+        characters.secondTask();
         System.out.println();
-        characlers.thirdTask();
+        characters.thirdTask();
         System.out.println();
-        characlers.fourthTask();
+        characters.fourthTask();
         System.out.println();
-        characlers.fifthTask();
+        characters.fifthTask();
         System.out.println();
-        characlers.sixthTash();
+        characters.sixthTash();
         System.out.println();
-        characlers.seventhTask();
+        characters.seventhTask();
     }
 
 }
