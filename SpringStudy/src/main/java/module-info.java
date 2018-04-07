@@ -1,0 +1,3 @@
+module SpringStudy {
+    requires Experiments;
+}
