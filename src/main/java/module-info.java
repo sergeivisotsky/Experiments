@@ -1,3 +1,4 @@
 module Experiments {
-    requires SpringStudy;
+    requires java.desktop;
+    requires kotlin.stdlib;
 }
