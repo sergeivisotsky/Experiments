@@ -29,12 +29,12 @@ public class Queue {
                 case 1:
                     System.out.print("Add element: ");
                     element = reader.readLine();
-                    queue.add(0, element);
+                    queue.add(element);
                     break;
                 case 2:
                     if (!queue.isEmpty()) {
                         System.out.println("Created queue: ");
-                        for (int i = 0; i < queue.size() - 1; i++) {
+                        for (int i = 0; i <= queue.size() - 1; i++) {
                             System.out.print(queue.get(i) + "\t");
                         }
                     } else {
