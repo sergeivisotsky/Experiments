@@ -10,7 +10,7 @@ public class EpsilonCalc {
         LinkedList<Double> elements = new LinkedList<>();
         elements.add(element);
         double result = 0;
-        for (int i = 0; i < quantity; i++) {
+        for (int i = 0; i <= elements.size(); i++) {
             result += elements.get(i);
         }
 

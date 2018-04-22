@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-
 public class Queue {
 
     public static void main(String[] args) throws IOException {
@@ -38,7 +37,7 @@ public class Queue {
                             System.out.print(queue.get(i) + "\t");
                         }
                     } else {
-                        throw new IllegalStateException("Queue is empty!");
+                        throw new IllegalStateException("queue is empty!");
                     }
                     break;
                 case 3:
@@ -50,9 +49,9 @@ public class Queue {
                     break;
                 case 5:
                     if (!queue.isEmpty()) {
-                        System.out.println("Queue size is: " + queue.size());
+                        System.out.println("queue size is: " + queue.size());
                     } else {
-                        throw new IllegalStateException("Queue is empty!");
+                        throw new IllegalStateException("queue is empty!");
                     }
                     break;
                 case 6:
