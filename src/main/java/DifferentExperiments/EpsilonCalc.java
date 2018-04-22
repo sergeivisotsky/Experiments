@@ -21,8 +21,8 @@ public class EpsilonCalc {
             System.out.print("ε = ");
             System.out.printf("%.1f", epsilon(delta, average));
             System.out.print("%");
-        } catch (IOException e) {
-            throw new IllegalStateException("Invalid delta or average!");
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Invalid delta or average!");
         }
     }
 }
