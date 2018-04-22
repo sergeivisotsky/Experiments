@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class EpsilonCalc {
-    double epsilon(double delta, double average) {
+    static double epsilon(double delta, double average) {
         return (delta / average) * 100;
     }
 
@@ -13,14 +13,13 @@ public class EpsilonCalc {
         BufferedReader input =
                 new BufferedReader(
                         new InputStreamReader(System.in));
-        EpsilonCalc eps = new EpsilonCalc();
         try {
             System.out.print("Delta: ");
             double delta = Double.parseDouble(input.readLine());
             System.out.print("Average: ");
             double average = Double.parseDouble(input.readLine());
             System.out.print("ε = ");
-            System.out.printf("%.1f", eps.epsilon(delta, average));
+            System.out.printf("%.1f", epsilon(delta, average));
             System.out.print("%");
         } catch (IOException e) {
             throw new IllegalStateException("Invalid delta or average!");
