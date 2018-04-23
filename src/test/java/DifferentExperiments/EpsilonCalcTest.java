@@ -2,21 +2,23 @@ package DifferentExperiments;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class EpsilonCalcTest {
 
-    private double insertionForTest() {
+    private double insertionForTest() throws IOException {
         int quantity = 3;
         double result = 0;
         for (int i = 0; i < quantity; i++) {
-            result = EpsilonCalc.average(3, 2);
+            result = EpsilonCalc.average(3);
         }
         return result;
     }
 
     @Test
-    void averageTest() {
+    void averageTest() throws IOException {
         assertEquals(4, insertionForTest());
     }
 
