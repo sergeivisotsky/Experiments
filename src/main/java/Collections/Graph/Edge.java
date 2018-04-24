@@ -1,4 +1,4 @@
-package DataStructures.Graph;
+package Collections.Graph;
 
 public class Edge {
     private final int id;
