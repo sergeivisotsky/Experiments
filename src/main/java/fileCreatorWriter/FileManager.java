@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class FileTransformations {
+public class FileManager {
     private final String PATH = "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
             "Experiments\\src\\main\\java\\fileCreatorWriter\\createdFiles\\";
     private final String FILE_NAME = "readable.txt";
@@ -36,7 +36,7 @@ public class FileTransformations {
     }
 
     public static void main(String[] args) {
-        FileTransformations fileTransformations = new FileTransformations();
+        FileManager fileManager = new FileManager();
         BufferedReader reader =
                 new BufferedReader(
                         new InputStreamReader(System.in));
@@ -60,17 +60,17 @@ public class FileTransformations {
                 answer = Integer.parseInt(input.readLine());
                 switch (answer) {
                     case 1:
-                        fileTransformations.readFile();
+                        fileManager.readFile();
                         break;
                     case 2:
                         System.out.print("\nEnter line to file: ");
                         String lineToFile = reader.readLine();
-                        fileTransformations.writeToFile(lineToFile);
-                        fileTransformations.writeToFile(reportDate);
+                        fileManager.writeToFile(lineToFile);
+                        fileManager.writeToFile(reportDate);
                         System.out.println("Data was saved!");
                         break;
                     case 3:
-                        fileTransformations.clearAll();
+                        fileManager.clearAll();
                         break;
                     default:
                         throw new IllegalStateException("Illegal value!");
