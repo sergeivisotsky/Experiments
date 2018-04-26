@@ -7,8 +7,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class FileManager {
-    private final String PATH = "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
-            "Experiments\\src\\main\\java\\fileCreatorWriter\\createdFiles\\";
+    private final String PATH = "D:/Users/Sergei/Documents/JavaProjects/" +
+            "Experiments/src/main/java/fileCreatorWriter/createdFiles/";
     private final String FILE_NAME = "readable.txt";
     private File file = new File(PATH + FILE_NAME);
 
