@@ -26,8 +26,8 @@ public class bookCreator {
         };
 
         creatorObject.scratchPaper();
-//        creatorObject.createPaper();
-//        creatorObject.sellBook();
-//        creatorObject.burnBook();
+        creatorObject.createPaper();
+        creatorObject.sellBook();
+        creatorObject.burnBook();
     }
 }
