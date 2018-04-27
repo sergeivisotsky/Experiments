@@ -17,7 +17,7 @@ class ThreadImplementationTest {
     }
 
     @Test
-    public void performanceTest() throws Exception{
+    public void performanceTest() throws Exception {
         Thread.currentThread().setName("Thread study testing");
         Thread testThread = new Thread(new ThreadImplementation(100));
         System.out.println("Thread created!");
