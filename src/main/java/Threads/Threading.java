@@ -1,4 +1,4 @@
-package multithreadedProgramming;
+package Threads;
 
 public class Threading extends Thread {
     private Thread anyThread;
