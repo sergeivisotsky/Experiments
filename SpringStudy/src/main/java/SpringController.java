@@ -5,5 +5,5 @@ import java.io.InputStreamReader;
 
 @Controller
 public class SpringController {
-    
+
 }
