@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 
-public class deQue {
+public class DeQue {
     public static void main(String[] args) {
         ArrayDeque<Integer> deque = new ArrayDeque<>();
         String yesNoAnswer;
@@ -76,7 +76,7 @@ public class deQue {
                 }
 
                 if (!deque.isEmpty()) {
-                    System.out.println("\nCreated deQue: ");
+                    System.out.println("\nCreated DeQue: ");
                     for (int element : deque) {
                         System.out.print(element + "\t");
                     }
