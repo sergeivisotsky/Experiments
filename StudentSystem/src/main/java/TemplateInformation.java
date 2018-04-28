@@ -11,7 +11,7 @@ public class TemplateInformation {
         studentInfo.add(new Student("Yulia", "Bogdanova", 25, 171051235, 16));
         studentInfo.add(new Student("Artur", "Kuzmik", 26, 1710523153, 17));
         studentInfo.add(new Student("Darya", "Lebedeva", 19, 1710512543, 9));
-        studentInfo.add(new Student("Anastasiya", "Chaplinskaya", 21, 1712310543, 7));
+        studentInfo.add(new Student("Anastasia", "Chaplinskaya", 21, 1712310543, 7));
         studentInfo.add(new Student("John", "Smith", 22, 1710512343, 4));
         studentInfo.add(new Student("Andrey", "Lazarev", 35, 1710541233, 1));
         return studentInfo;
