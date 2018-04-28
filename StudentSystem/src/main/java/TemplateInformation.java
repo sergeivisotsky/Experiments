@@ -19,7 +19,6 @@ public class TemplateInformation {
 
 
     void fileCreation() throws IOException {
-        ArrayList<Student> student = getStudentInfo();
         File file = new File(Constants.FILE_DIR + Constants.FILE_NAME);
         FileWriter fileInputStream = new FileWriter(file);
         for (Student stud : studentInfo) {
