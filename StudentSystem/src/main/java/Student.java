@@ -53,4 +53,10 @@ public class Student {
     public void setGroupNumber(int groupNumber) {
         this.groupNumber = groupNumber;
     }
+
+    @Override
+    public String toString() {
+        return name + "\t" + surname + "\t" + age +
+                "\t" + studentIndex + "\t" + groupNumber;
+    }
 }
