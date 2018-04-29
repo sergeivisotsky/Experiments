@@ -3,23 +3,29 @@ package Functionality.core;
 import Functionality.Student;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class Functions {
     private TemplateInformation templateText = new TemplateInformation();
     public static BufferedReader reader =
             new BufferedReader(new InputStreamReader(System.in));
     public void showData() {
-        try (BufferedReader readerTwo =
-                     new BufferedReader(
-                             new FileReader(templateText.file))) {
-            String data;
-            while ((data = readerTwo.readLine()) != null) {
-                System.out.println(data);
-            }
+        try (FileInputStream fileInputStream =
+                     new FileInputStream(templateText.file)) {
+            ObjectInputStream objectInputStream =
+                    new ObjectInputStream(fileInputStream);
+            Student result = (Student) objectInputStream.readObject();
+            objectInputStream.close();
+            System.out.printf("%-10s %-10s %-10s %-10s %-10s\n",
+                    "Name", "Surname", "Age", "Student index", "Group number");
+            System.out.printf("%-10s %-10s %-10s %-10s %-10s\n", result.getName(), result.getSurname(),
+                    result.getAge(), result.getStudentIndex(), result.getGroupNumber());
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         } catch (IOException e) {
             System.out.println("Input-output error!");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found!");
         }
     }
 

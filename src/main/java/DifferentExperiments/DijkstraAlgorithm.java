@@ -35,7 +35,7 @@ public class DijkstraAlgorithm {
             shortestPathSet[minimalDist] = true;
 
             for (int j = 0; j < verticleIndex; j++) {
-                    if (!shortestPathSet[j] &&
+                if (!shortestPathSet[j] &&
                         graph[minimalDist][j] != 0 &&
                         distance[minimalDist] != Integer.MAX_VALUE &&
                         distance[minimalDist] + graph[minimalDist][j] < distance[j]) {
@@ -48,13 +48,15 @@ public class DijkstraAlgorithm {
     }
 
     public static void main(String[] args) {
-        int graph[][] = {{0, 1, 1, 1, 1, 1, 1},
+        int graph[][] = {
+                {0, 1, 1, 1, 1, 1, 1},
                 {0, 0, 0, 0, 0, 0, 0},
                 {1, 1, 1, 0, 1, 1, 1},
                 {1, 0, 0, 0, 0, 0, 1},
                 {0, 0, 1, 1, 1, 1, 1},
                 {1, 0, 0, 0, 0, 0, 0},
-                {1, 1, 1, 1, 1, 1, 0}};
+                {1, 1, 1, 1, 1, 1, 0}
+        };
         DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm();
         dijkstraAlgorithm.dijkstra(graph, 0);
     }
