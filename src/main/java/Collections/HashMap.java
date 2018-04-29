@@ -3,9 +3,8 @@ package Collections;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 
-public class HashMapTest {
+public class HashMap {
     static class Fields {
         int hashMapSize;
         int findInHashMapSize;
@@ -18,7 +17,7 @@ public class HashMapTest {
         BufferedReader br =
                 new BufferedReader(
                         new InputStreamReader(System.in));
-        HashMap<String, String> apples = new HashMap<>();
+        java.util.HashMap<String, String> apples = new java.util.HashMap<>();
         System.out.print("Hashmap size: ");
         fields.hashMapSize =
                 Integer.parseInt(br.readLine());
