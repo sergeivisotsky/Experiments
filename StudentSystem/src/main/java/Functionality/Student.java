@@ -1,11 +1,17 @@
-public class Student {
+package Functionality;
+
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private String name;
     private String surname;
     private int age;
     private int studentIndex;
     private int groupNumber;
 
-    public Student(String name, String surname, int age, int studentIndex, int groupNumber) {
+    public Student(String name, String surname,
+                   int age, int studentIndex,
+                   int groupNumber) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -14,7 +20,6 @@ public class Student {
     }
 
     public String getName() {
-
         return name;
     }
 
@@ -57,6 +62,6 @@ public class Student {
     @Override
     public String toString() {
         return name + "\t" + surname + "\t" + age +
-                "\t" + studentIndex + "\t" + groupNumber;
+                "\t" + studentIndex + "\t" + groupNumber + "\n";
     }
 }

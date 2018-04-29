@@ -1,13 +1,15 @@
+import Functionality.core.Functions;
+import Functionality.core.TemplateInformation;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) {
-        try (BufferedReader input =
-                     new BufferedReader(
-                             new InputStreamReader(System.in))) {
+        try {
             TemplateInformation template = new TemplateInformation();
+            Functions functions = new Functions();
             System.out.println("Student info from .txt file");
             int answer;
             String yesNoAnswer;
@@ -19,17 +21,17 @@ public class Main {
                 System.out.println("3: Modify data");
                 System.out.println("4: Delete data");
                 System.out.print("\nChoose answer: ");
-                answer = Integer.parseInt(input.readLine());
+                answer = Integer.parseInt(Functions.reader.readLine());
                 switch (answer) {
                     case 0:
                         template.fileCreation();
                         System.out.println("Data was written!");
                         break;
                     case 1:
-
+                        functions.showData();
                         break;
                     case 2:
-
+                        functions.addRecord();
                         break;
                     case 3:
 
@@ -42,10 +44,10 @@ public class Main {
                 }
                 System.out.println();
                 System.out.print("\nContinue? (y/n) ");
-                yesNoAnswer = input.readLine();
+                yesNoAnswer = Functions.reader.readLine();
             } while (yesNoAnswer.equals("y") || yesNoAnswer.equals("Y"));
         } catch (IOException e) {
-            System.out.println("Input output error!");
+            System.out.println("\nInput output error!");
         }
     }
 }
