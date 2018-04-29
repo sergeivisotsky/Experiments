@@ -45,7 +45,7 @@ public class Main {
                 yesNoAnswer = Functions.reader.readLine();
             } while (yesNoAnswer.equals("y") || yesNoAnswer.equals("Y"));
         } catch (IOException e) {
-            System.out.println("\nInput output error!");
+            System.out.println("\nInput-output error!");
         }
     }
 }
