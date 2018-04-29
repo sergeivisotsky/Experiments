@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class TemplateInformation {
-    private ArrayList<Student> studentInfo = new ArrayList<>();
+    ArrayList<Student> studentInfo = new ArrayList<>();
     File file = new File(Constants.FILE_DIR + Constants.FILE_NAME);
 
     public void fileCreation() throws IOException {
