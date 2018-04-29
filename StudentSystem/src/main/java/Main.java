@@ -14,7 +14,6 @@ public class Main {
             int answer;
             String yesNoAnswer;
             do {
-                System.out.println();
                 System.out.println("0: Create from template");
                 System.out.println("1: Show data");
                 System.out.println("2: Add data");
@@ -42,7 +41,6 @@ public class Main {
                     default:
                         throw new IllegalStateException("Illegal state!");
                 }
-                System.out.println();
                 System.out.print("\nContinue? (y/n) ");
                 yesNoAnswer = Functions.reader.readLine();
             } while (yesNoAnswer.equals("y") || yesNoAnswer.equals("Y"));
