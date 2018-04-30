@@ -45,7 +45,8 @@ public class Functions {
             templateInformation.studentInfo.add(new Student(name, surname, age,
                     studentIndex, groupNumber));
             for (int i = 0; i < templateInformation.studentInfo.size(); i++) {
-                writer.printf("%-10s %-10s %-10s %-10s %-10s\n", templateInformation.studentInfo.get(i).getName(),
+                writer.printf("%-10s %-10s %-10s %-10s %-10s\n",
+                        templateInformation.studentInfo.get(i).getName(),
                         templateInformation.studentInfo.get(i).getSurname(),
                         templateInformation.studentInfo.get(i).getAge(),
                         templateInformation.studentInfo.get(i).getStudentIndex(),
@@ -71,7 +72,8 @@ public class Functions {
                 } else {
                     templateInformation.studentInfo.remove(lineNumber - 1);
                     for (int i = 0; i < templateInformation.studentInfo.size(); i++) {
-                        printWriter.printf("%-10s %-10s %-10s %-10s %-10s\n", templateInformation.studentInfo.get(i).getName(),
+                        printWriter.printf("%-10s %-10s %-10s %-10s %-10s\n",
+                                templateInformation.studentInfo.get(i).getName(),
                                 templateInformation.studentInfo.get(i).getSurname(),
                                 templateInformation.studentInfo.get(i).getAge(),
                                 templateInformation.studentInfo.get(i).getStudentIndex(),
