@@ -36,7 +36,7 @@ public class Main {
 
                         break;
                     case 4:
-
+                        functions.deleteRecord();
                         break;
                     default:
                         throw new IllegalStateException("Illegal state!");

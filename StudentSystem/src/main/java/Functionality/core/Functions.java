@@ -18,11 +18,6 @@ public class Functions {
             System.out.printf("%-10s %-10s %-10s %-10s %-10s\n",
                     "Name", "Surname", "Age", "Student index", "Group number");
             while ((line = readerTwo.readLine()) != null) {
-
-                /*System.out.printf("%-10s %-10s %-10s %-10s %-10s\n",
-                        result.getName(), result.getSurname(),
-                        result.getAge(), result.getStudentIndex(),
-                        result.getGroupNumber());*/
                 System.out.println(line);
             }
         } catch (FileNotFoundException e) {
@@ -57,6 +52,35 @@ public class Functions {
                         templateInformation.studentInfo.get(i).getGroupNumber());
             }
             System.out.println("Data was saved!");
+        } catch (IOException e) {
+            System.out.println("Input-output error!");
+        }
+    }
+
+    public void deleteRecord() {
+        boolean stopChoice = false;
+        try(PrintWriter printWriter =
+                    new PrintWriter(templateInformation.file)) {
+            while (!stopChoice) {
+                System.out.print("Number of record you want to delete: ");
+                int lineNumber = Integer.parseInt(reader.readLine());
+
+                if (lineNumber <= 0 ||
+                        lineNumber > templateInformation.studentInfo.size()) {
+                    throw new IllegalStateException("Error!");
+                } else {
+                    templateInformation.studentInfo.remove(lineNumber - 1);
+                    for (int i = 0; i < templateInformation.studentInfo.size(); i++) {
+                        printWriter.printf("%-10s %-10s %-10s %-10s %-10s\n", templateInformation.studentInfo.get(i).getName(),
+                                templateInformation.studentInfo.get(i).getSurname(),
+                                templateInformation.studentInfo.get(i).getAge(),
+                                templateInformation.studentInfo.get(i).getStudentIndex(),
+                                templateInformation.studentInfo.get(i).getGroupNumber());
+                    }
+                }
+                stopChoice = true;
+            }
+            System.out.println("Record was deleted!");
         } catch (IOException e) {
             System.out.println("Input-output error!");
         }
