@@ -4,21 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayListTestTwo {
-    private static class Animal {
-        void voice() {
-            System.out.println("Animal voice!");
-        }
-    }
 
-    private static class Pet extends Animal {
-        void call() {
-            System.out.println("Animal call!");
-        }
+    abstract static class Pet {
+        abstract void call();
     }
 
     private static class Cat extends Pet {
-        void mew() {
-            System.out.println("Mew-Mew-Mew! :)");
+        String speech;
+
+        Cat(String speech) {
+            this.speech = speech;
+        }
+
+        @Override
+        void call() {
+            System.out.println(speech);
+        }
+    }
+
+    private static class Dog extends Pet {
+        String speech;
+
+        public Dog(String speech) {
+            this.speech = speech;
+        }
+
+        @Override
+        void call() {
+            System.out.println(speech);
         }
     }
 
@@ -28,7 +41,14 @@ public class ArrayListTestTwo {
 
     public static void main(String[] args) {
         List<Cat> cats = new ArrayList<>();
-        cats.add(new Cat());
+        cats.add(new Cat("Meow-Meow-Meow!"));
+        cats.add(new Cat("Meow-Meow-Meow-Two!"));
+        cats.add(new Cat("Meow-Meow-Meow-Three!"));
         callPets(cats);
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog("Gau-Gau-Gau!"));
+        dogs.add(new Dog("Gau-Gau-Gau-Two!"));
+        dogs.add(new Dog("Gau-Gau-Gau-Three!"));
+        callPets(dogs);
     }
 }
