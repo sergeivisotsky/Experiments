@@ -25,7 +25,7 @@ public class ArrayListTestTwo {
     private static class Dog extends Pet {
         String speech;
 
-        public Dog(String speech) {
+        Dog(String speech) {
             this.speech = speech;
         }
 
