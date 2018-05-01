@@ -3,8 +3,9 @@ package Functionality.core;
 import Functionality.Student;
 
 import java.io.*;
+import java.net.Inet4Address;
 
-public class Functions {
+public class Functionality {
     private TemplateInformation templateInformation =
             new TemplateInformation();
     public static BufferedReader reader =
@@ -85,6 +86,43 @@ public class Functions {
             System.out.println("Record was deleted!");
         } catch (IOException e) {
             System.out.println("Input-output error!");
+        }
+    }
+
+    public void modifyRecord() {
+        boolean endOption = false;
+        int option;
+        System.out.println("What kind of data would you like to modify?");
+        System.out.println("1: Name");
+        System.out.println("2: Surname");
+        System.out.println("3: Student index");
+        System.out.println("4: Group number");
+        System.out.println("0: Close modification mode");
+        try {
+            do {
+                System.out.println();
+                System.out.print("Option: ");
+                option = Integer.parseInt(reader.readLine());
+                switch (option) {
+                    case 1:
+                        
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 0:
+                        endOption = true;
+                        break;
+                        default:
+                            System.out.println("Option doesn't exist!");
+                            break;
+                }
+            } while (!endOption);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
