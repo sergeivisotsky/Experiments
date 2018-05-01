@@ -3,7 +3,6 @@ package Functionality.core;
 import Functionality.Student;
 
 import java.io.*;
-import java.net.Inet4Address;
 
 public class MainFunctions {
     private TemplateInformation templateInformation =
