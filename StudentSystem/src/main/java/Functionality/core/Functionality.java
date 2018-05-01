@@ -105,7 +105,9 @@ public class Functionality {
                 option = Integer.parseInt(reader.readLine());
                 switch (option) {
                     case 1:
-                        
+                        System.out.print("Old name: ");
+                        String oldName = reader.readLine();
+
                         break;
                     case 2:
                         break;
