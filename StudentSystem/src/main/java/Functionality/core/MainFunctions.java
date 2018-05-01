@@ -5,7 +5,7 @@ import Functionality.Student;
 import java.io.*;
 import java.net.Inet4Address;
 
-public class Functionality {
+public class MainFunctions {
     private TemplateInformation templateInformation =
             new TemplateInformation();
     public static BufferedReader reader =

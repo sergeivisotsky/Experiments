@@ -1,4 +1,4 @@
-import Functionality.core.Functionality;
+import Functionality.core.MainFunctions;
 import Functionality.core.TemplateInformation;
 
 import java.io.IOException;
@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             TemplateInformation template = new TemplateInformation();
-            Functionality functionality = new Functionality();
+            MainFunctions mainFunctions = new MainFunctions();
             System.out.println("Student info from .txt file");
             int answer;
             String yesNoAnswer;
@@ -18,29 +18,29 @@ public class Main {
                 System.out.println("3: Modify data");
                 System.out.println("4: Delete data");
                 System.out.print("\nChoose answer: ");
-                answer = Integer.parseInt(Functionality.reader.readLine());
+                answer = Integer.parseInt(MainFunctions.reader.readLine());
                 switch (answer) {
                     case 0:
                         template.fileCreation();
                         System.out.println("Data was written!");
                         break;
                     case 1:
-                        functionality.showData();
+                        mainFunctions.showData();
                         break;
                     case 2:
-                        functionality.addRecord();
+                        mainFunctions.addRecord();
                         break;
                     case 3:
-                        functionality.modifyRecord();
+                        mainFunctions.modifyRecord();
                         break;
                     case 4:
-                        functionality.deleteRecord();
+                        mainFunctions.deleteRecord();
                         break;
                     default:
                         throw new IllegalStateException("Illegal state!");
                 }
                 System.out.print("\nContinue? (y/n) ");
-                yesNoAnswer = Functionality.reader.readLine();
+                yesNoAnswer = MainFunctions.reader.readLine();
             } while (yesNoAnswer.equals("y") || yesNoAnswer.equals("Y"));
         } catch (IOException e) {
             System.out.println("\nInput-output error!");
