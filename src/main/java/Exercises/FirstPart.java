@@ -88,6 +88,33 @@ public class FirstPart {
                     (4 * Math.tan(Math.PI / numberOfSides));
         }
     }
+
+    static class FifthTask {
+        public static void main(String[] args) throws IOException {
+            double latFirst, longFirst, latSec, longSec;
+            System.out.print("Input the latitude of coordinate 1: ");
+            latFirst = Double.parseDouble(reader.readLine());
+            System.out.print("Input the longitude of coordinate 1: ");
+            longFirst = Double.parseDouble(reader.readLine());
+            System.out.print("Input the latitude of coordinate 2: ");
+            latSec = Double.parseDouble(reader.readLine());
+            System.out.print("Input the longitude of coordinate 2: ");
+            longSec = Double.parseDouble(reader.readLine());
+            System.out.println("The distance between those points is: " +
+                    distance(latFirst, longFirst, latSec, longSec) + " km");
+        }
+
+        private static double distance(double latFirst, double longFirst,
+                                       double latSec, double longSec) {
+            latFirst = Math.toRadians(latFirst);
+            longFirst = Math.toRadians(longFirst);
+            latSec = Math.toRadians(latSec);
+            longSec = Math.toRadians(longSec);
+            double radiusEarth = 6371.01;
+            return radiusEarth * Math.acos(Math.sin(latFirst) * Math.sin(latSec) +
+                    Math.cos(latFirst) * Math.cos(latSec) * Math.cos(longFirst - longSec));
+        }
+    }
 }
 
 
