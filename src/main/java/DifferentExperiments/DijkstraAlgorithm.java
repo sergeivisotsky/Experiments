@@ -21,14 +21,14 @@ public class DijkstraAlgorithm {
         }
     }
 
-    private void dijkstra(int graph[][], int start) {
+    private void dijkstra(int[][] graph) {
         int distance[] = new int[verticleIndex];
         boolean shortestPathSet[] = new boolean[verticleIndex];
         for (int i = 0; i < verticleIndex; i++) {
             distance[i] = Integer.MAX_VALUE;
             shortestPathSet[i] = false;
         }
-        distance[start] = 0;
+        distance[0] = 0;
 
         for (int i = 0; i < verticleIndex - 1; i++) {
             int minimalDist = minDistance(distance, shortestPathSet);
@@ -58,6 +58,6 @@ public class DijkstraAlgorithm {
                 {1, 1, 1, 1, 1, 1, 0}
         };
         DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm();
-        dijkstraAlgorithm.dijkstra(graph, 0);
+        dijkstraAlgorithm.dijkstra(graph);
     }
 }

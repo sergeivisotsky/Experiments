@@ -44,7 +44,7 @@ public class ThirdPart {
 
     static class secondTask {
         public static void main(String[] args) {
-            
+
         }
     }
 }
