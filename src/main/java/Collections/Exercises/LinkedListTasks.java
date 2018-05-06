@@ -1,5 +1,6 @@
 package Collections.Exercises;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -66,6 +67,30 @@ public class LinkedListTasks {
                 System.out.println("Element-index: " +
                         numbers.get(i) + " - " + i);
             }
+        }
+    }
+
+    static class SixthTask {
+        public static void main(String[] args) {
+            LinkedList<Integer> firstList = new LinkedList<>();
+            for (int i = 1; i <= 20; i += 3) {
+                firstList.add(i);
+            }
+            System.out.println("First LinkedList: " + firstList);
+            LinkedList secondList = (LinkedList) firstList.clone();
+            System.out.println("Second list: " + secondList);
+        }
+    }
+
+    static class SeventhTask {
+        public static void main(String[] args) {
+            LinkedList<String> names = new LinkedList<>();
+            names.add("John");
+            names.add("Maria");
+            names.add("Oriana");
+            System.out.println("Create LinkedList: " + names);
+            System.out.println("Deletable element: " + names.removeFirst());
+            System.out.println("LinkedList after: " + names);
         }
     }
 }
