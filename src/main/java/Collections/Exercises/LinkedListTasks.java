@@ -2,9 +2,12 @@ package Collections.Exercises;
 
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class LinkedListTasks {
+    private static Random rd = new Random();
+
     static class FirstTask {
         public static void main(String[] args) {
             LinkedList<Integer> numbers = new LinkedList<>();
@@ -59,7 +62,6 @@ public class LinkedListTasks {
     static class FifthTask {
         public static void main(String[] args) {
             LinkedList<Integer> numbers = new LinkedList<>();
-            var rd = new Random();
             for (int i = 0; i < 10; i++) {
                 numbers.add(rd.nextInt(99) + 1);
             }
@@ -91,6 +93,51 @@ public class LinkedListTasks {
             System.out.println("Create LinkedList: " + names);
             System.out.println("Deletable element: " + names.removeFirst());
             System.out.println("LinkedList after: " + names);
+        }
+    }
+
+    static class EightTask {
+        public static void main(String[] args) {
+            LinkedList<String> animals = new LinkedList<>();
+            animals.add("Cat");
+            animals.add("Dog");
+            animals.add("Tiger");
+            animals.add("Panda");
+            animals.add("Cheetah");
+            System.out.println("LinkedList: " + animals);
+            System.out.println("The first element is: " + animals.peekFirst());
+            System.out.println("The last element is: " + animals.peekLast());
+        }
+    }
+
+    static class NinthTask {
+        public static void main(String[] args) {
+            LinkedList<Integer> numbers = new LinkedList<>();
+            for (int i = 0; i < 10; i++) {
+                numbers.add(rd.nextInt(99) + 1);
+            }
+            System.out.println("LinkedList: " + numbers);
+            LinkedList numbersInList = (LinkedList) numbers.clone();
+            System.out.println("ArrayList: " + numbersInList);
+        }
+    }
+
+    static class TensTask {
+        public static void main(String[] args) {
+            LinkedList<Integer> numbers = new LinkedList<>();
+            numbers.add(13);
+            numbers.add(34);
+            numbers.add(33);
+            System.out.println("First LinkedList: " + numbers);
+            LinkedList<Integer> numbersTwo = new LinkedList<>();
+            numbersTwo.add(13);
+            numbersTwo.add(34);
+            numbersTwo.add(45);
+            LinkedList<String> similarOrNot = new LinkedList<>();
+            for (int element : numbers) {
+                similarOrNot.add(numbersTwo.contains(element) ? "Yes" : "No");
+            }
+            System.out.println("Element similarity: " + similarOrNot);
         }
     }
 }
