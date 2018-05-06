@@ -44,7 +44,26 @@ public class ThirdPart {
 
     static class secondTask {
         public static void main(String[] args) {
+            int[] array = {20, 20, 30, 40, 50, 50, 50};
+            System.out.println("Array before is: " + Arrays.toString(array));
+            System.out.println("Array length before is: : " + array.length);
+            System.out.println("Array length after: " + arrayModifier(array));
+        }
 
+        private static int arrayModifier(int[] array) {
+            int counter = 1;
+            for (int i = 1; i < array.length; i++) {
+                if (array[i] != array[i - 1]) {
+                    array[counter++] = array[i];
+                }
+            }
+            return counter;
+        }
+    }
+
+    static class ThirdTask {
+        public static void main(String[] args) {
+            
         }
     }
 }
