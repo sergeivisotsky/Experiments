@@ -5,9 +5,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class ThirdPart {
-    private static BufferedReader reader =
-            new BufferedReader(new InputStreamReader(System.in));
-
     static class FirstTask {
         static int max;
         static int min;
