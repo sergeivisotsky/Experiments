@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class FirstPart {
+public class ArrayListTasks {
     static class FirstTask {
         public static void main(String[] args) {
             List<Integer> numbers = new ArrayList<>();
