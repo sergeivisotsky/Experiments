@@ -59,7 +59,7 @@ public class LinkedListTasks {
     static class FifthTask {
         public static void main(String[] args) {
             LinkedList<Integer> numbers = new LinkedList<>();
-            Random rd = new Random();
+            var rd = new Random();
             for (int i = 0; i < 10; i++) {
                 numbers.add(rd.nextInt(99) + 1);
             }
