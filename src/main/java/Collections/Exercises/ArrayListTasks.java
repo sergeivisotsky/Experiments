@@ -68,8 +68,8 @@ public class ArrayListTasks {
             animals.add("Cheetah");
 
             System.out.println("Animal list: ");
-            for (int i = 0; i < animals.size(); i++) {
-                System.out.print(animals.get(i) + "\t");
+            for (String animal : animals) {
+                System.out.print(animal + "\t");
             }
         }
     }
