@@ -1,6 +1,7 @@
 package Collections.Exercises;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 public class LinkedListTasks {
     static class FirstTask {
@@ -57,8 +58,9 @@ public class LinkedListTasks {
     static class FifthTask {
         public static void main(String[] args) {
             LinkedList<Integer> numbers = new LinkedList<>();
-            for (int i = 1; i < 20; i += 3) {
-                numbers.add(i);
+            Random rd = new Random();
+            for (int i = 0; i < 10; i++) {
+                numbers.add(rd.nextInt(99) + 1);
             }
             for (int i = 0; i < numbers.size(); i++) {
                 System.out.println("Element-index: " +
