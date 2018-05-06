@@ -60,10 +60,4 @@ public class ThirdPart {
             return counter;
         }
     }
-
-    static class ThirdTask {
-        public static void main(String[] args) {
-            
-        }
-    }
 }
