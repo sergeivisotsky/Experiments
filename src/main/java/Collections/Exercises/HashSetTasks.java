@@ -79,7 +79,7 @@ public class HashSetTasks {
             System.out.println("Created HashSet: " + names);
 
             Set<String> namesClone = new TreeSet<>(names);
-            System.out.println("Elements in TreeSet: " + namesClone);
+            System.out.println("Elements in TreeSetTasks: " + namesClone);
         }
     }
 
