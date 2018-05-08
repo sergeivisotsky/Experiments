@@ -1,10 +1,15 @@
 package Collections.Exercises;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.TreeSet;
 
 public class TreeSetTasks {
+    private static BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
     private static Random rd = new Random();
 
     static class FirstTask {
@@ -97,6 +102,71 @@ public class TreeSetTasks {
             for (int element : numbers) {
                 System.out.print(secondNumberSet.contains(element) ? "Yes\t" : "No\t");
             }
+        }
+    }
+
+    static class SeventhTask {
+        public static void main(String[] args) {
+            TreeSet<Integer> numbers = new TreeSet<>();
+            TreeSet<Integer> numbersLessThanSeven;
+            for (int i = 0; i < 10; i++) {
+                numbers.add(i);
+            }
+            numbersLessThanSeven = (TreeSet<Integer>) numbers.headSet(7);
+            System.out.println("Elements that are less than 7 are: " + numbersLessThanSeven);
+        }
+    }
+
+    static class EightsTask {
+        public static void main(String[] args) throws IOException {
+            TreeSet<Integer> numbers = new TreeSet<>();
+            numbers.add(12);
+            numbers.add(45);
+            numbers.add(67);
+            numbers.add(214);
+            numbers.add(90);
+            System.out.print("Add pivot: ");
+            int pivot = Integer.parseInt(br.readLine());
+            System.out.println("Element that is greater that or equal: " +
+                    numbers.ceiling(pivot));
+        }
+    }
+
+    static class NinthTask {
+        public static void main(String[] args) {
+            TreeSet<Integer> numbers = new TreeSet<>();
+            for (int i = 0; i < 10; i++) {
+                numbers.add(rd.nextInt(99) + 1);
+            }
+            System.out.println("TreeSet before: " + numbers);
+            System.out.println("Delete first element: " + numbers.pollFirst());
+            System.out.println("TreeSet after: " + numbers);
+        }
+    }
+
+    static class TensTask {
+        public static void main(String[] args) {
+            TreeSet<Integer> numbers = new TreeSet<>();
+            for (int i = 0; i < 10; i++) {
+                numbers.add(rd.nextInt(99) + 1);
+            }
+            System.out.println("TreeSet before: " + numbers);
+            System.out.println("Delete last element: " + numbers.pollLast());
+            System.out.println("TreeSet after: " + numbers);
+        }
+    }
+
+    static class EleventhTask {
+        public static void main(String[] args) throws IOException {
+            TreeSet<Integer> numbers = new TreeSet<>();
+            for (int i = 0; i < 10; i++) {
+                numbers.add(rd.nextInt(99) + 1);
+            }
+            System.out.println("Created TreeSet: " + numbers);
+            System.out.print("Removable element is: ");
+            int deletableElement = Integer.parseInt(br.readLine());
+            numbers.remove(deletableElement);
+            System.out.println("TreeSet after: " + numbers);
         }
     }
 }
