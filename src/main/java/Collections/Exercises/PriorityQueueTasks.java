@@ -4,6 +4,7 @@ import java.util.*;
 
 public class PriorityQueueTasks {
     private static Random rd = new Random();
+
     static class FirstTask {
         public static void main(String[] args) {
             PriorityQueue<String> colors = new PriorityQueue<>();
