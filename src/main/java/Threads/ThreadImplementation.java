@@ -4,7 +4,7 @@ public class ThreadImplementation implements Runnable {
 
     private int threadCounter;
 
-    public ThreadImplementation(int threadCounter) {
+    ThreadImplementation(int threadCounter) {
         this.threadCounter = threadCounter;
     }
 
