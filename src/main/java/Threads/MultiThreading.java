@@ -30,7 +30,6 @@ class CreateThread implements Runnable {
             thread.start();
         }
     }
-
 }
 
 public class MultiThreading {
