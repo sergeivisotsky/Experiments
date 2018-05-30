@@ -1,26 +1,33 @@
+package app;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Student {
     @Id
-    private int id;
+    private long id;
     private String name;
     private String surname;
     private int age;
     private int groupNumber;
+    private int studyYear;
     private String studyProgram;
 
-    public Student(int id, String name, String surname, int age, int groupNumber, String studyProgram) {
+    public Student(long id, String name, String surname,
+                   int age, int groupNumber, int studyYear,
+                   String studyProgram) {
+        super();
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.groupNumber = groupNumber;
+        this.studyYear = studyYear;
         this.studyProgram = studyProgram;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -38,6 +45,10 @@ public class Student {
 
     public int getGroupNumber() {
         return groupNumber;
+    }
+
+    public int getStudyYear() {
+        return studyYear;
     }
 
     public String getStudyProgram() {
