@@ -11,8 +11,8 @@ class DbHandlerTest {
     void addRecordTest() {
         ApplicationContext context = new GenericApplicationContext();
         ((GenericApplicationContext) context).refresh();
-        IStudentDAO IStudentDAO = context.getBean("IStudentDAO", IStudentDAO.class);
-        IStudentDAO.addRecord(new Student(
+        StudentDAO StudentDAO = context.getBean("StudentDAO", StudentDAO.class);
+        StudentDAO.addRecord(new Student(
                 123456, "Test_name", "Test_surname", 20,
                 10, 1, "Computer science"));
     }

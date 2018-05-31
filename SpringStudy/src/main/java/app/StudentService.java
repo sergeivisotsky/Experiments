@@ -1,21 +1,22 @@
 package app;
 
 import app.db.DbHandler;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ModFunc implements IFunctionalRepository {
-    private static class ModFuncHolder {
-        private static final ModFunc modFunc = new ModFunc();
+@Service
+public class StudentService {
+    private static class StudentServiceHolder {
+        private static final StudentService STUDENT_SERVICE = new StudentService();
     }
 
-    public static ModFunc getModFunc() {
-        return ModFuncHolder.modFunc;
+    static StudentService getStudentService() {
+        return StudentServiceHolder.STUDENT_SERVICE;
     }
 
-    @Override
-    public void addRecord() {
+    void addRecord() {
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(System.in))) {
             System.out.print("User id: ");
@@ -30,7 +31,7 @@ public class ModFunc implements IFunctionalRepository {
             int groupNumber = Integer.parseInt(reader.readLine());
             System.out.print("Study year: ");
             int studyYear = Integer.parseInt(reader.readLine());
-            System.out.print("Study program");
+            System.out.print("Study program: ");
             String studyProgram = textFormatter(reader.readLine());
             Student student = new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram);
@@ -40,13 +41,11 @@ public class ModFunc implements IFunctionalRepository {
         }
     }
 
-    @Override
-    public void displayData() {
+    void displayData() {
 
     }
 
-    @Override
-    public void deleteRecord(String name, String surname) {
+    void deleteRecord() {
 
     }
 

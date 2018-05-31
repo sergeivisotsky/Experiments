@@ -3,10 +3,10 @@ package app;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IFunctionalRepository {
+public interface FunctionalRepository {
     void addRecord();
 
     void displayData();
 
-    void deleteRecord(String name, String surname);
+    void deleteRecord();
 }

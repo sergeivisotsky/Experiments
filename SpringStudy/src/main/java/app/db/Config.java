@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource(value = "classpath:app.properties")
+@PropertySource(value = "app.properties")
 public class Config {
     private final Environment environment;
 
@@ -18,7 +18,6 @@ public class Config {
     public Config(Environment environment) {
         this.environment = environment;
     }
-
 
     @Bean
     public DataSource getDataSource() {
