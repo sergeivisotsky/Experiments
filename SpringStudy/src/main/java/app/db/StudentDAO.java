@@ -1,14 +1,15 @@
 package app.db;
 
 import app.Student;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface StudentDAO {
     void addRecord(Student student);
 
-    void displayData();
+    List<Student> displayData();
 
     void deleteRecord(int id, String name, String surname);
 }

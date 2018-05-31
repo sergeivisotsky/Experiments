@@ -1,6 +1,6 @@
 package app;
 
-import app.db.DbHandler;
+import app.db.DbDAO;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -35,7 +35,7 @@ public class StudentService {
             String studyProgram = textFormatter(reader.readLine());
             Student student = new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram);
-            DbHandler.getDbHandler().addRecord(student);
+            DbDAO.getDbHandler().addRecord(student);
         } catch (Exception e) {
             e.printStackTrace();
         }

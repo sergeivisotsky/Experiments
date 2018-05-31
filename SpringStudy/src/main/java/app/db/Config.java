@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource(value = "app.properties")
+@PropertySource(value = "classpath:app.properties")
 public class Config {
     private final Environment environment;
 
@@ -24,7 +24,8 @@ public class Config {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverName"));
         dataSource.setUrl(environment.getRequiredProperty("db.pathName"));
-
+        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
         return dataSource;
     }
 }
