@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 
 @Component("DbHandler")
-public class DbHandler implements StudentDAO {
+public class DbHandler implements IStudentDAO {
 
     private static class DbHandlerHolder {
         private static final DbHandler dbHandler =
@@ -26,13 +26,18 @@ public class DbHandler implements StudentDAO {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    private String sqlQuery;
+
     @Override
     public void addRecord(Student student) {
-        jdbcTemplate.update(
-                "INSERT INTO student_data(" +
-                        "id, name, surname, age, group_number, study_year, study_program) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?)", student.getId(), student.getName(), student.getSurname(),
-                student.getAge(), student.getGroupNumber(), student.getStudyYear(), student.getStudyProgram());
+        sqlQuery = "INSERT INTO student_data(" +
+                "id, name, surname, age, group_number, " +
+                "study_year, study_program) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        var params = new Object[]{student.getId(), student.getName(), student.getSurname(),
+                student.getAge(), student.getGroupNumber(), student.getStudyYear(), student.getStudyProgram()};
+
+        jdbcTemplate.update(sqlQuery, params);
     }
 
     @Override

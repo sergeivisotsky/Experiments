@@ -1,11 +1,10 @@
-package app.db;
+package app;
 
-import app.Student;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentDAO {
-    void addRecord(Student student);
+public interface IFunctionalRepository {
+    void addRecord();
 
     void displayData();
 

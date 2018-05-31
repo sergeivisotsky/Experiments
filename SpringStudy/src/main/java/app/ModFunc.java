@@ -5,7 +5,7 @@ import app.db.DbHandler;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ModFunc implements FunctionalRepository {
+public class ModFunc implements IFunctionalRepository {
     private static class ModFuncHolder {
         private static final ModFunc modFunc = new ModFunc();
     }
