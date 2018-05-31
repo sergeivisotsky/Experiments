@@ -15,7 +15,7 @@ public class DbDAO implements StudentDAO {
         private static final DbDAO DB_DAO = new DbDAO();
     }
 
-    public static DbDAO getDbHandler() {
+    public static DbDAO getDbDAO() {
         return DbHandlerHolder.DB_DAO;
     }
 

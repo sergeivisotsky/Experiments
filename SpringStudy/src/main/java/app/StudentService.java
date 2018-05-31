@@ -36,7 +36,7 @@ public class StudentService {
             String studyProgram = textFormat(reader.readLine());
             Student student = new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram);
-            DbDAO.getDbHandler().addRecord(student);
+            DbDAO.getDbDAO().addRecord(student);
         } catch (Exception e) {
             e.printStackTrace();
         }

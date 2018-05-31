@@ -27,7 +27,7 @@ public class Application {
                         StudentService.getStudentService().addRecord();
                         break;
                     case 2:
-                        DbDAO.getDbHandler().displayData();
+                        DbDAO.getDbDAO().displayData();
                         break;
                     case 3:
                         StudentService.getStudentService().deleteRecord();
