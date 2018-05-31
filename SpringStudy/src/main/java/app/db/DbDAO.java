@@ -12,8 +12,7 @@ import java.util.List;
 public class DbDAO implements StudentDAO {
 
     private static class DbHandlerHolder {
-        private static final DbDAO DB_DAO =
-                new DbDAO();
+        private static final DbDAO DB_DAO = new DbDAO();
     }
 
     public static DbDAO getDbHandler() {

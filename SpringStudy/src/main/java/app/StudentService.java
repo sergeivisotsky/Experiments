@@ -9,7 +9,8 @@ import java.io.InputStreamReader;
 @Service
 public class StudentService {
     private static class StudentServiceHolder {
-        private static final StudentService STUDENT_SERVICE = new StudentService();
+        private static final StudentService STUDENT_SERVICE =
+                new StudentService();
     }
 
     static StudentService getStudentService() {
@@ -22,9 +23,9 @@ public class StudentService {
             System.out.print("User id: ");
             long id = Long.parseLong(reader.readLine());
             System.out.print("Name: ");
-            String name = textFormatter(reader.readLine());
+            String name = textFormat(reader.readLine());
             System.out.print("Surname: ");
-            String surname = textFormatter(reader.readLine());
+            String surname = textFormat(reader.readLine());
             System.out.print("Age: ");
             int age = Integer.parseInt(reader.readLine());
             System.out.print("Group number: ");
@@ -32,7 +33,7 @@ public class StudentService {
             System.out.print("Study year: ");
             int studyYear = Integer.parseInt(reader.readLine());
             System.out.print("Study program: ");
-            String studyProgram = textFormatter(reader.readLine());
+            String studyProgram = textFormat(reader.readLine());
             Student student = new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram);
             DbDAO.getDbHandler().addRecord(student);
@@ -49,8 +50,8 @@ public class StudentService {
 
     }
 
-    private String textFormatter(String textToBeFormatted) {
-        return textToBeFormatted.substring(0, 1).toUpperCase() +
-                textToBeFormatted.substring(1).toLowerCase();
+    private String textFormat(String text) {
+        return text.substring(0, 1).toUpperCase() +
+                text.substring(1).toLowerCase();
     }
 }
