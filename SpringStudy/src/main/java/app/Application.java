@@ -13,7 +13,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(System.in))) {
-            char yesNoAnswer;
+            String yesNoAnswer;
             int option;
             do {
                 System.out.println("1: Add record");
@@ -37,8 +37,8 @@ public class Application {
                 }
 
                 System.out.print("Continue (y/n)? ");
-                yesNoAnswer = (char) reader.read();
-            } while (yesNoAnswer == 'y');
+                yesNoAnswer = reader.readLine().toLowerCase();
+            } while (yesNoAnswer.equals("y"));
         } catch (Exception e) {
             e.printStackTrace();
         }

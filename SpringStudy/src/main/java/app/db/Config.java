@@ -5,13 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:db/app.properties")
+@PropertySource("classpath:app.properties")
 public class Config {
     private final Environment environment;
 
@@ -30,8 +29,8 @@ public class Config {
         return dataSource;
     }
 
-    @Bean
+/*    @Bean
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(getDataSource());
-    }
+    }*/
 }
