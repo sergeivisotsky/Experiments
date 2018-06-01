@@ -21,7 +21,7 @@ public class StudentService {
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(System.in))) {
             System.out.print("User id: ");
-            long id = Long.parseLong(reader.readLine());
+            Long id = Long.parseLong(reader.readLine());
             System.out.print("Name: ");
             String name = textFormat(reader.readLine());
             System.out.print("Surname: ");

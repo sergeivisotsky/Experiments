@@ -6,7 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Student {
     @Id
-    private long id;
+    private Long id;
     private String name;
     private String surname;
     private int age;
@@ -14,7 +14,7 @@ public class Student {
     private int studyYear;
     private String studyProgram;
 
-    public Student(long id, String name, String surname,
+    public Student(Long id, String name, String surname,
                    int age, int groupNumber, int studyYear,
                    String studyProgram) {
         super();
@@ -27,7 +27,7 @@ public class Student {
         this.studyProgram = studyProgram;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

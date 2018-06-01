@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.util.List;
 
-@Component("DbHandler")
+@Component("dbDAO")
 public class DbDAO implements StudentDAO {
 
     private static class DbHandlerHolder {
@@ -41,7 +41,7 @@ public class DbDAO implements StudentDAO {
 
 
     @Override
-    public void deleteRecord(int id, String name, String surname) {
+    public void deleteRecord(Long id, String name, String surname) {
 
     }
 }

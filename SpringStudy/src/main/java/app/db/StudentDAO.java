@@ -1,6 +1,7 @@
 package app.db;
 
 import app.Student;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,5 +12,5 @@ public interface StudentDAO {
 
     List<Student> displayData();
 
-    void deleteRecord(int id, String name, String surname);
+    void deleteRecord(Long id, String name, String surname);
 }
