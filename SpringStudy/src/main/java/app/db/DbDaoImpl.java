@@ -3,12 +3,12 @@ package app.db;
 import app.Service.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 
-@Component("dbDaoImpl")
+@Repository
 public class DbDaoImpl implements StudentDao {
 
     private static class DbDaoImplHolder {
@@ -21,21 +21,14 @@ public class DbDaoImpl implements StudentDao {
     }
 
     private JdbcTemplate jdbcTemplate;
-//    private DataSource dataSource;
 
     @Autowired
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    /*@Autowired
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }*/
-
     @Override
     public void addRecord(Student student) {
-//        JdbcTemplate insert = new JdbcTemplate(dataSource);
         jdbcTemplate.update("INSERT INTO student_data(id, name, surname, age, group_number, " +
                         "study_year, study_program) VALUES (?, ?, ?, ?, ?, ?, ?)", student.getId(),
                 student.getName(), student.getSurname(), student.getAge(),

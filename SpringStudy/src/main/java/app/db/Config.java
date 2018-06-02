@@ -20,17 +20,18 @@ public class Config {
     }
 
     @Bean
-    public DataSource getDataSource() {
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverName"));
         dataSource.setUrl(environment.getRequiredProperty("db.pathName"));
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+        
         return dataSource;
     }
 
 /*    @Bean
     public JdbcTemplate jdbcTemplate() {
-        return new JdbcTemplate(getDataSource());
+        return new JdbcTemplate(dataSource());
     }*/
 }
