@@ -1,6 +1,7 @@
 package app;
 
-import app.db.DbDAO;
+import app.Service.StudentServiceDaoImpl;
+import app.db.DbDaoImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -24,13 +25,13 @@ public class Application {
 
                 switch (option) {
                     case 1:
-                        StudentService.getStudentService().addRecord();
+                        StudentServiceDaoImpl.getStudentServiceDaoImpl().addRecord();
                         break;
                     case 2:
-                        DbDAO.getDbDAO().displayData();
+                        DbDaoImpl.getDbDaoImpl().displayData();
                         break;
                     case 3:
-                        StudentService.getStudentService().deleteRecord();
+                        StudentServiceDaoImpl.getStudentServiceDaoImpl().deleteRecord();
                         break;
                     default:
                         System.out.println("No such an option!");

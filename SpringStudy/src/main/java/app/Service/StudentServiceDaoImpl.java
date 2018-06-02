@@ -1,27 +1,28 @@
-package app;
+package app.Service;
 
-import app.db.DbDAO;
+import app.db.DbDaoImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 @Service
-public class StudentService {
+public class StudentServiceDaoImpl implements StudentServiceDao {
     private static class StudentServiceHolder {
-        private static final StudentService STUDENT_SERVICE =
-                new StudentService();
+        private static final StudentServiceDaoImpl STUDENT_SERVICE_DAO_IMPL =
+                new StudentServiceDaoImpl();
     }
 
-    static StudentService getStudentService() {
-        return StudentServiceHolder.STUDENT_SERVICE;
+    public static StudentServiceDaoImpl getStudentServiceDaoImpl() {
+        return StudentServiceHolder.STUDENT_SERVICE_DAO_IMPL;
     }
 
-    void addRecord() {
+    @Override
+    public void addRecord() {
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(System.in))) {
             System.out.print("User id: ");
-            Long id = Long.parseLong(reader.readLine());
+            long id = Long.parseLong(reader.readLine());
             System.out.print("Name: ");
             String name = textFormat(reader.readLine());
             System.out.print("Surname: ");
@@ -36,17 +37,24 @@ public class StudentService {
             String studyProgram = textFormat(reader.readLine());
             Student student = new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram);
-            DbDAO.getDbDAO().addRecord(student);
+            DbDaoImpl.getDbDaoImpl().addRecord(student);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    void displayData() {
+    @Override
+    public void displayData() {
 
     }
 
-    void deleteRecord() {
+    @Override
+    public void deleteRecord() {
+
+    }
+
+    @Override
+    public void getRecordById() {
 
     }
 

@@ -1,16 +1,17 @@
 package app.db;
 
-import app.Student;
-import org.springframework.data.repository.CrudRepository;
+import app.Service.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface StudentDAO {
+public interface StudentDao {
     void addRecord(Student student);
 
     List<Student> displayData();
 
-    void deleteRecord(Long id, String name, String surname);
+    void deleteRecord(long id, String name, String surname);
+
+    List<Student> getRecordByID(long id);
 }
