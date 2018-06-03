@@ -3,12 +3,12 @@ package app.db;
 import app.Service.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.List;
 
-@Repository
+@Component("DbDaoIml")
 public class DbDaoImpl implements StudentDao {
 
     private static class DbDaoImplHolder {
@@ -39,7 +39,6 @@ public class DbDaoImpl implements StudentDao {
     public List<Student> displayData() {
         return null;
     }
-
 
     @Override
     public void deleteRecord(long id, String name, String surname) {

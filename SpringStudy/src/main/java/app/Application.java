@@ -2,16 +2,14 @@ package app;
 
 import app.Service.StudentServiceDaoImpl;
 import app.db.DbDaoImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-@SpringBootApplication
+@Component
 public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    void run() {
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(System.in))) {
             String yesNoAnswer;
