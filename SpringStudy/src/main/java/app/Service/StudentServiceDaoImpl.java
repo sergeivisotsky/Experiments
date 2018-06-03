@@ -35,9 +35,8 @@ public class StudentServiceDaoImpl implements StudentServiceDao {
             int studyYear = Integer.parseInt(reader.readLine());
             System.out.print("Study program: ");
             String studyProgram = textFormat(reader.readLine());
-            Student student = new Student(id, name, surname,
-                    age, groupNumber, studyYear, studyProgram);
-            DbDaoImpl.getDbDaoImpl().addRecord(student);
+            DbDaoImpl.getDbDaoImpl().addRecord(new Student(id, name, surname,
+                    age, groupNumber, studyYear, studyProgram));
         } catch (Exception e) {
             e.printStackTrace();
         }

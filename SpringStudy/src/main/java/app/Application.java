@@ -1,6 +1,5 @@
 package app;
 
-import app.Service.Student;
 import app.Service.StudentServiceDaoImpl;
 import app.db.DbDaoImpl;
 import org.springframework.boot.SpringApplication;
@@ -19,20 +18,26 @@ public class Application {
             int option;
             do {
                 System.out.println("1: Add record");
-                System.out.println("2: Display record");
+                System.out.println("2: Display all records");
                 System.out.println("3: Delete record");
                 System.out.print("Option: ");
                 option = Integer.parseInt(reader.readLine());
 
                 switch (option) {
                     case 1:
-                        StudentServiceDaoImpl.getStudentServiceDaoImpl().addRecord();
+                        StudentServiceDaoImpl
+                                .getStudentServiceDaoImpl()
+                                .addRecord();
                         break;
                     case 2:
-                        DbDaoImpl.getDbDaoImpl().displayData();
+                        DbDaoImpl
+                                .getDbDaoImpl()
+                                .displayData();
                         break;
                     case 3:
-                        StudentServiceDaoImpl.getStudentServiceDaoImpl().deleteRecord();
+                        StudentServiceDaoImpl
+                                .getStudentServiceDaoImpl()
+                                .deleteRecord();
                         break;
                     default:
                         System.out.println("No such an option!");
