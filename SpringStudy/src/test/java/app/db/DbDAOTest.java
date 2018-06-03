@@ -1,6 +1,7 @@
 package app.db;
 
-import app.Service.Student;
+import app.db.dao.Student;
+import app.db.dao.StudentDaoImpl;
 import org.junit.jupiter.api.Test;
 
 class DbDAOTest {
@@ -28,7 +29,7 @@ class DbDAOTest {
 
     @Test
     void addRecordTest() {
-        DbDaoImpl.getDbDaoImpl().addRecord(new Student(
+        StudentDaoImpl.getDbDaoImpl().addRecord(new Student(
                 151616516, "Test_name", "Test_surname", 20,
                 10, 1, "Computer science"));
     }

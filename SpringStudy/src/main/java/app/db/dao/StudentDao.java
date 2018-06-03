@@ -1,6 +1,5 @@
-package app.db;
+package app.db.dao;
 
-import app.Service.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

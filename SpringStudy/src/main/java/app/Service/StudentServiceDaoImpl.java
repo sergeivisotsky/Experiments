@@ -1,6 +1,7 @@
 package app.Service;
 
-import app.db.DbDaoImpl;
+import app.db.dao.Student;
+import app.db.dao.StudentDaoImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -35,7 +36,7 @@ public class StudentServiceDaoImpl implements StudentServiceDao {
             int studyYear = Integer.parseInt(reader.readLine());
             System.out.print("Study program: ");
             String studyProgram = textFormat(reader.readLine());
-            DbDaoImpl.getDbDaoImpl().addRecord(new Student(id, name, surname,
+            StudentDaoImpl.getDbDaoImpl().addRecord(new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram));
         } catch (Exception e) {
             e.printStackTrace();

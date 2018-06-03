@@ -1,4 +1,4 @@
-package app.Service;
+package app.db.dao;
 
 public class Student {
     private long id;

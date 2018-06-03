@@ -1,6 +1,5 @@
-package app.db;
+package app.db.dao;
 
-import app.Service.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -8,15 +7,15 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.util.List;
 
-@Component("DbDaoIml")
-public class DbDaoImpl implements StudentDao {
+@Component("studentDaoImpl")
+public class StudentDaoImpl implements StudentDao {
 
     private static class DbDaoImplHolder {
-        private static final DbDaoImpl DB_DAO_IMPL =
-                new DbDaoImpl();
+        private static final StudentDaoImpl DB_DAO_IMPL =
+                new StudentDaoImpl();
     }
 
-    public static DbDaoImpl getDbDaoImpl() {
+    public static StudentDaoImpl getDbDaoImpl() {
         return DbDaoImplHolder.DB_DAO_IMPL;
     }
 

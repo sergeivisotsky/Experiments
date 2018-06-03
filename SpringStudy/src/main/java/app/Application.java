@@ -1,7 +1,7 @@
 package app;
 
 import app.Service.StudentServiceDaoImpl;
-import app.db.DbDaoImpl;
+import app.db.dao.StudentDaoImpl;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -28,7 +28,7 @@ public class Application {
                                 .addRecord();
                         break;
                     case 2:
-                        DbDaoImpl
+                        StudentDaoImpl
                                 .getDbDaoImpl()
                                 .displayData();
                         break;
