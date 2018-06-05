@@ -9,12 +9,22 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Main {
+    private static class MainHolder {
+        private static final Main main = new Main();
+    }
+
+    public static Main getMain() {
+        return MainHolder.main;
+    }
+
+    public BufferedReader reader =
+            new BufferedReader(new InputStreamReader(System.in));
+
     public static void main(String[] args) {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(Config.class);
         StudentServicе studentServicе = context.getBean(StudentServicе.class);
-        try (BufferedReader reader =
-                     new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             String yesNoAnswer;
             int option;
             do {
@@ -22,14 +32,14 @@ public class Main {
                 System.out.println("2: Display all records");
                 System.out.println("3: Delete record");
                 System.out.print("Option: ");
-                option = Integer.parseInt(reader.readLine());
+                option = Integer.parseInt(getMain().reader.readLine());
 
                 switch (option) {
                     case 1:
                         studentServicе.addRecord();
                         break;
                     case 2:
-//                        studentServicе.displayData();
+                        studentServicе.displayData();
                         break;
                     case 3:
                         studentServicе.deleteRecord();
@@ -39,10 +49,10 @@ public class Main {
                 }
 
                 System.out.print("Continue (y/n)? ");
-                yesNoAnswer = reader.readLine().toLowerCase();
+                yesNoAnswer = getMain().reader.readLine().toLowerCase();
             } while (yesNoAnswer.equals("y"));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

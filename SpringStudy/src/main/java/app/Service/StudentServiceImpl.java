@@ -1,12 +1,10 @@
 package app.Service;
 
+import app.Main;
 import app.db.dao.Student;
 import app.db.dao.StudentDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 @Service("StudentService")
 public class StudentServiceImpl implements StudentServicе {
@@ -19,26 +17,39 @@ public class StudentServiceImpl implements StudentServicе {
 
     @Override
     public void addRecord() {
-        try (BufferedReader reader =
-                     new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.print("User id: ");
-            long id = Long.parseLong(reader.readLine());
+            long id = Long.parseLong(
+                    Main.getMain().reader.readLine());
+
             System.out.print("Name: ");
-            String name = textFormat(reader.readLine());
+            String name = textFormat(
+                    Main.getMain().reader.readLine());
+
             System.out.print("Surname: ");
-            String surname = textFormat(reader.readLine());
+            String surname = textFormat(
+                    Main.getMain().reader.readLine());
+
             System.out.print("Age: ");
-            int age = Integer.parseInt(reader.readLine());
+            int age = Integer.parseInt(
+                    Main.getMain().reader.readLine());
+
             System.out.print("Group number: ");
-            int groupNumber = Integer.parseInt(reader.readLine());
+            int groupNumber = Integer.parseInt(
+                    Main.getMain().reader.readLine());
+
             System.out.print("Study year: ");
-            int studyYear = Integer.parseInt(reader.readLine());
+            int studyYear = Integer.parseInt(
+                    Main.getMain().reader.readLine());
+
             System.out.print("Study program: ");
-            String studyProgram = textFormat(reader.readLine());
+            String studyProgram = textFormat(
+                    Main.getMain().reader.readLine());
+
             studentDao.addRecord(new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

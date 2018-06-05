@@ -26,12 +26,14 @@ public class StudentDaoImpl implements StudentDao {
                         "study_year, study_program) VALUES (?, ?, ?, ?, ?, ?, ?)", student.getId(),
                 student.getName(), student.getSurname(), student.getAge(),
                 student.getGroupNumber(), student.getStudyYear(), student.getStudyProgram());
+        System.out.println("Data was saved!");
     }
 
     @Override
-    public List<Student> displayData() {
-        return jdbcTemplate.query("SELECT id, name, surname, age, group_number, " +
-                "study_year, study_program FROM student_data", new BeanPropertyRowMapper<>(Student.class));
+    public Mapper displayData() {
+        /*return jdbcTemplate.query("SELECT id, name, surname, age, group_number, " +
+                "study_year, study_program FROM student_data", new BeanPropertyRowMapper<>(Student.class));*/
+        return null;
     }
 
     @Override
@@ -44,9 +46,9 @@ public class StudentDaoImpl implements StudentDao {
         return null;
     }
 
-    final class Mapper implements RowMapper<Student> {
+    final class Mapper implements RowMapper<String> {
         @Override
-        public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public String mapRow(ResultSet rs, int rowNum) throws SQLException {
             Student student = new Student();
             student.setId(rs.getInt("id"));
             student.setName(rs.getString("name"));
@@ -55,7 +57,7 @@ public class StudentDaoImpl implements StudentDao {
             student.setGroupNumber(rs.getInt("group_number"));
             student.setStudyYear(rs.getInt("study_year"));
             student.setStudyProgram(rs.getString("study_program"));
-            return student;
+            return student.toString();
         }
     }
 }

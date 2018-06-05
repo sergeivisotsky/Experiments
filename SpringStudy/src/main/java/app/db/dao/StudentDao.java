@@ -8,7 +8,7 @@ import java.util.List;
 public interface StudentDao {
     void addRecord(Student student);
 
-    List<Student> displayData();
+    StudentDaoImpl.Mapper displayData();
 
     void deleteRecord(long id, String name, String surname);
 
