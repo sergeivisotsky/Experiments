@@ -2,20 +2,19 @@ package app.Service;
 
 import app.db.dao.Student;
 import app.db.dao.StudentDaoImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-@Service
-public class StudentServiceDaoImpl implements StudentServiceDao {
-    private static class StudentServiceHolder {
-        private static final StudentServiceDaoImpl STUDENT_SERVICE_DAO_IMPL =
-                new StudentServiceDaoImpl();
-    }
+@Service("StudentService")
+public class StudentServiceImpl implements StudentServicе {
+    private StudentDaoImpl studentDao;
 
-    public static StudentServiceDaoImpl getStudentServiceDaoImpl() {
-        return StudentServiceHolder.STUDENT_SERVICE_DAO_IMPL;
+    @Autowired
+    public StudentServiceImpl(StudentDaoImpl studentDao) {
+        this.studentDao = studentDao;
     }
 
     @Override
@@ -36,7 +35,7 @@ public class StudentServiceDaoImpl implements StudentServiceDao {
             int studyYear = Integer.parseInt(reader.readLine());
             System.out.print("Study program: ");
             String studyProgram = textFormat(reader.readLine());
-            StudentDaoImpl.getDbDaoImpl().addRecord(new Student(id, name, surname,
+            studentDao.addRecord(new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram));
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,7 +1,9 @@
 package app.db;
 
+import app.db.dao.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -11,6 +13,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
+@ComponentScan(basePackages = "app")
 @PropertySource("classpath:app.properties")
 public class Config {
     private final Environment environment;
@@ -32,7 +35,15 @@ public class Config {
     }
 
     @Bean
-    public JdbcTemplate jdbcTemplate() {
-        return new JdbcTemplate(dataSource());
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate.setResultsMapCaseInsensitive(true);
+
+        return jdbcTemplate;
+    }
+
+    @Bean
+    public Student student() {
+        return new Student();
     }
 }

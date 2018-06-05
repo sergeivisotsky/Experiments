@@ -3,7 +3,7 @@ package app.Service;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentServiceDao {
+public interface StudentServicе {
     void addRecord();
 
     void displayData();

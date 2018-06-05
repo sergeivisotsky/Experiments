@@ -1,29 +1,23 @@
 package app.db.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
-@Component("studentDaoImpl")
+@Component("StudentDaoImpl")
 public class StudentDaoImpl implements StudentDao {
-
-    private static class DbDaoImplHolder {
-        private static final StudentDaoImpl DB_DAO_IMPL =
-                new StudentDaoImpl();
-    }
-
-    public static StudentDaoImpl getDbDaoImpl() {
-        return DbDaoImplHolder.DB_DAO_IMPL;
-    }
 
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setDataSource(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    public StudentDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
@@ -36,7 +30,8 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> displayData() {
-        return null;
+        return jdbcTemplate.query("SELECT id, name, surname, age, group_number, " +
+                "study_year, study_program FROM student_data", new BeanPropertyRowMapper<>(Student.class));
     }
 
     @Override
@@ -47,5 +42,20 @@ public class StudentDaoImpl implements StudentDao {
     @Override
     public List<Student> getRecordByID(long id) {
         return null;
+    }
+
+    final class Mapper implements RowMapper<Student> {
+        @Override
+        public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Student student = new Student();
+            student.setId(rs.getInt("id"));
+            student.setName(rs.getString("name"));
+            student.setSurname(rs.getString("surname"));
+            student.setAge(rs.getInt("age"));
+            student.setGroupNumber(rs.getInt("group_number"));
+            student.setStudyYear(rs.getInt("study_year"));
+            student.setStudyProgram(rs.getString("study_program"));
+            return student;
+        }
     }
 }

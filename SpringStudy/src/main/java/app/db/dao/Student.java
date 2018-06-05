@@ -1,6 +1,11 @@
 package app.db.dao;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
+    @Id
     private long id;
     private String name;
     private String surname;
@@ -8,6 +13,9 @@ public class Student {
     private int groupNumber;
     private int studyYear;
     private String studyProgram;
+
+    public Student() {
+    }
 
     public Student(long id, String name, String surname,
                    int age, int groupNumber, int studyYear,
@@ -76,5 +84,11 @@ public class Student {
 
     public void setStudyProgram(String studyProgram) {
         this.studyProgram = studyProgram;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s",
+                id, name, surname, age, groupNumber, studyYear, studyProgram);
     }
 }
