@@ -6,6 +6,9 @@ import app.db.dao.StudentDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @Service("StudentService")
 public class StudentServiceImpl implements StudentServicе {
     private StudentDaoImpl studentDao;
@@ -55,7 +58,7 @@ public class StudentServiceImpl implements StudentServicе {
 
     @Override
     public void displayData() {
-
+        studentDao.displayData();
     }
 
     @Override

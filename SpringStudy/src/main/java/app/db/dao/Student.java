@@ -15,6 +15,7 @@ public class Student {
     private String studyProgram;
 
     public Student() {
+        super();
     }
 
     public Student(long id, String name, String surname,
@@ -96,6 +97,6 @@ public class Student {
                 ", groupNumber=" + groupNumber +
                 ", studyYear=" + studyYear +
                 ", studyProgram='" + studyProgram + '\'' +
-                '}';
+                '}' + "\n";
     }
 }

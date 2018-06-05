@@ -1,7 +1,6 @@
 package app.db.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -30,10 +29,15 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public Mapper displayData() {
-        /*return jdbcTemplate.query("SELECT id, name, surname, age, group_number, " +
-                "study_year, study_program FROM student_data", new BeanPropertyRowMapper<>(Student.class));*/
-        return null;
+    public void displayData() {
+        String sqlQuery = "SELECT id, name, surname, age, group_number, " +
+                "study_year, study_program FROM student_data";
+        List studentList = jdbcTemplate.query(sqlQuery, (rs, rowNum) ->
+                new Student(rs.getInt("id"), rs.getString("name"),
+                        rs.getString("surname"), rs.getInt("age"),
+                        rs.getInt("group_number"), rs.getInt("study_year"),
+                        rs.getString("study_program")));
+        System.out.println(studentList);
     }
 
     @Override
@@ -42,13 +46,19 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
+    public List<Student> findAll() {
+        return jdbcTemplate.query("SELECT * FROM student_data ORDER BY id AND name",
+                new StudentRowMapper());
+    }
+
+    @Override
     public List<Student> getRecordByID(long id) {
         return null;
     }
 
-    final class Mapper implements RowMapper<String> {
+    private final class StudentRowMapper implements RowMapper<Student> {
         @Override
-        public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
             Student student = new Student();
             student.setId(rs.getInt("id"));
             student.setName(rs.getString("name"));
@@ -57,7 +67,7 @@ public class StudentDaoImpl implements StudentDao {
             student.setGroupNumber(rs.getInt("group_number"));
             student.setStudyYear(rs.getInt("study_year"));
             student.setStudyProgram(rs.getString("study_program"));
-            return student.toString();
+            return student;
         }
     }
 }
