@@ -90,13 +90,19 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", groupNumber=" + groupNumber +
-                ", studyYear=" + studyYear +
-                ", studyProgram='" + studyProgram + '\'' +
-                '}' + "\n";
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", surname = '" + surname + '\'' +
+                ", age = " + age +
+                ", groupNumber = " + groupNumber +
+                ", studyYear = " + studyYear +
+                ", studyProgram = '" + studyProgram + '\'' +
+                '}';
     }
+
+    /*@Override
+    public String toString() {
+        return String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s",
+                id, name, surname, age, groupNumber, studyYear, studyProgram + "\n");
+    }*/
 }

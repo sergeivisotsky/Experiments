@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service("StudentService")
 public class StudentServiceImpl implements StudentServicе {
@@ -56,8 +57,12 @@ public class StudentServiceImpl implements StudentServicе {
     }
 
     @Override
-    public void displayData() {
-        studentDao.displayData();
+    public void retrieveData() {
+        List<Student> students = studentDao.findAll();
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 
     @Override
@@ -66,7 +71,7 @@ public class StudentServiceImpl implements StudentServicе {
             System.out.println("Deletion by id, name and surname");
 
             System.out.print("Id: ");
-            long id = Integer.parseInt(
+            long id = Long.parseLong(
                     Main.getMain().reader.readLine());
 
             System.out.print("Name: ");
@@ -85,7 +90,27 @@ public class StudentServiceImpl implements StudentServicе {
 
     @Override
     public void getRecordById() {
+        try {
+            System.out.print("Id: ");
+            long id = Long.parseLong(
+                    Main.getMain().reader.readLine());
 
+            List<Student> students =
+                    studentDao.getRecordByID(id);
+            for (Student student : students) {
+                System.out.println(student);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void orderById() {
+        List<Student> students = studentDao.orderById();
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 
     private String textFormat(String text) {

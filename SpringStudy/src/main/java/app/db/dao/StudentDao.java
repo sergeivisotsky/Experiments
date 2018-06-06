@@ -8,11 +8,11 @@ import java.util.List;
 public interface StudentDao {
     void addRecord(Student student);
 
-    void displayData();
-
     void deleteRecord(long id, String name, String surname);
 
-    List<Student> findAll();
-
     List<Student> getRecordByID(long id);
+
+    List<Student> orderById();
+
+    List<Student> findAll();
 }

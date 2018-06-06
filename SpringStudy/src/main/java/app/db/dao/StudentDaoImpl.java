@@ -29,13 +29,6 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public void displayData() {
-        List studentList = jdbcTemplate.query("SELECT id, name, surname, age, group_number, " +
-                "study_year, study_program FROM student_data", new StudentRowMapper());
-        System.out.println(studentList);
-    }
-
-    @Override
     public void deleteRecord(long id, String name, String surname) {
         jdbcTemplate.update("DELETE FROM student_data WHERE id" + " = ? " +
                 "AND name" + " = ? " + "AND surname" + " = ?", id, name, surname);
@@ -43,14 +36,26 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<Student> findAll() {
-        return jdbcTemplate.query("SELECT * FROM student_data ORDER BY id AND name",
+    public List<Student> getRecordByID(long id) {
+//        try {
+        return jdbcTemplate.query("SELECT * FROM student_data WHERE id = ?",
+                new StudentRowMapper(), id);
+        /*} catch (EmptyResultDataAccessException e) {
+            System.out.println("No data with such a parameter found!");
+            return null;
+        }*/
+    }
+
+    @Override
+    public List<Student> orderById() {
+        System.out.println("Data was ordered!");
+        return jdbcTemplate.query("SELECT * FROM student_data ORDER BY id ASC ",
                 new StudentRowMapper());
     }
 
     @Override
-    public List<Student> getRecordByID(long id) {
-        return null;
+    public List<Student> findAll() {
+        return jdbcTemplate.query("SELECT * FROM student_data", new StudentRowMapper());
     }
 
     private final class StudentRowMapper implements RowMapper<Student> {

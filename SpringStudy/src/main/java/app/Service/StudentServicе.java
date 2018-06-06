@@ -6,9 +6,11 @@ import org.springframework.stereotype.Repository;
 public interface StudentServicе {
     void addRecord();
 
-    void displayData();
+    void retrieveData();
 
     void deleteRecord();
 
     void getRecordById();
+
+    void orderById();
 }
