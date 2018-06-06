@@ -6,8 +6,7 @@ import app.db.dao.StudentDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.io.IOException;
 
 @Service("StudentService")
 public class StudentServiceImpl implements StudentServicе {
@@ -51,7 +50,7 @@ public class StudentServiceImpl implements StudentServicе {
 
             studentDao.addRecord(new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram));
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -63,7 +62,25 @@ public class StudentServiceImpl implements StudentServicе {
 
     @Override
     public void deleteRecord() {
+        try {
+            System.out.println("Deletion by id, name and surname");
 
+            System.out.print("Id: ");
+            long id = Integer.parseInt(
+                    Main.getMain().reader.readLine());
+
+            System.out.print("Name: ");
+            String name = textFormat(
+                    Main.getMain().reader.readLine());
+
+            System.out.print("Surname: ");
+            String surname = textFormat(
+                    Main.getMain().reader.readLine());
+
+            studentDao.deleteRecord(id, name, surname);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

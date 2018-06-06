@@ -30,20 +30,16 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public void displayData() {
-        String sqlQuery = "SELECT id, name, surname, age, group_number, " +
-                "study_year, study_program FROM student_data";
-        List studentList = jdbcTemplate.query(sqlQuery, /*(rs, rowNum) ->
-                new Student(rs.getInt("id"), rs.getString("name"),
-                        rs.getString("surname"), rs.getInt("age"),
-                        rs.getInt("group_number"), rs.getInt("study_year"),
-                        rs.getString("study_program")));*/
-                new StudentRowMapper());
+        List studentList = jdbcTemplate.query("SELECT id, name, surname, age, group_number, " +
+                "study_year, study_program FROM student_data", new StudentRowMapper());
         System.out.println(studentList);
     }
 
     @Override
     public void deleteRecord(long id, String name, String surname) {
-
+        jdbcTemplate.update("DELETE FROM student_data WHERE id" + " = ? " +
+                "AND name" + " = ? " + "AND surname" + " = ?", id, name, surname);
+        System.out.println("Record was deleted!");
     }
 
     @Override
