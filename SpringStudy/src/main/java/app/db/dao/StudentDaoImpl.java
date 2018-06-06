@@ -32,11 +32,12 @@ public class StudentDaoImpl implements StudentDao {
     public void displayData() {
         String sqlQuery = "SELECT id, name, surname, age, group_number, " +
                 "study_year, study_program FROM student_data";
-        List studentList = jdbcTemplate.query(sqlQuery, (rs, rowNum) ->
+        List studentList = jdbcTemplate.query(sqlQuery, /*(rs, rowNum) ->
                 new Student(rs.getInt("id"), rs.getString("name"),
                         rs.getString("surname"), rs.getInt("age"),
                         rs.getInt("group_number"), rs.getInt("study_year"),
-                        rs.getString("study_program")));
+                        rs.getString("study_program")));*/
+                new StudentRowMapper());
         System.out.println(studentList);
     }
 

@@ -24,6 +24,7 @@ public class Main {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(Config.class);
         StudentServicе studentServicе = context.getBean(StudentServicе.class);
+
         try {
             String yesNoAnswer;
             int option;
