@@ -15,9 +15,6 @@ public class StudentServiceImpl implements StudentServicе {
     private StudentDaoImpl studentDao;
     private Student student;
 
-    private static final Logger logger =
-            Logger.getLogger(StudentServiceImpl.class);
-
     @Autowired
     public StudentServiceImpl(StudentDaoImpl studentDao,
                               Student student) {

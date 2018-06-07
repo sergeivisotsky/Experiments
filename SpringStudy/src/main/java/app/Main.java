@@ -2,7 +2,6 @@ package app;
 
 import app.Service.StudentServicе;
 import app.db.Config;
-import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,8 +16,6 @@ public class Main {
     public static Main getMain() {
         return MainHolder.main;
     }
-
-    private static final Logger logger = Logger.getLogger(Main.class);
 
     public static final BufferedReader reader =
             new BufferedReader(new InputStreamReader(System.in));

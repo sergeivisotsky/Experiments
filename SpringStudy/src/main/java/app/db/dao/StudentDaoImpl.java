@@ -34,19 +34,27 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public void deleteRecord(long id, String name, String surname) {
-        jdbcTemplate.update("DELETE FROM student_data WHERE id" + " = ?" +
-                "AND name" + " = ? " + "AND surname" + " = ?", id, name, surname);
-        System.out.println("Record was deleted!");
+        try {
+            jdbcTemplate.update("DELETE FROM student_data WHERE id" + " = ?" +
+                    "AND name" + " = ? " + "AND surname" + " = ?", id, name, surname);
+            System.out.println("Record was deleted!");
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @Override
     public void recordModification(Student student, long id) {
-        jdbcTemplate.update("REPLACE INTO student_data(id, name, surname, age, " +
-                        "group_number, study_year, study_program) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                id, student.getName(), student.getSurname(),
-                student.getAge(), student.getGroupNumber(), student.getStudyYear(),
-                student.getStudyProgram());
-        System.out.println("Record was updated!");
+        try {
+            jdbcTemplate.update("REPLACE INTO student_data(id, name, surname, age, " +
+                            "group_number, study_year, study_program) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    id, student.getName(), student.getSurname(),
+                    student.getAge(), student.getGroupNumber(), student.getStudyYear(),
+                    student.getStudyProgram());
+            System.out.println("Record was updated!");
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @Override
@@ -62,14 +70,24 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> orderById() {
-        System.out.println("Data was ordered!");
-        return jdbcTemplate.query("SELECT * FROM student_data ORDER BY id ASC ",
-                new StudentRowMapper());
+        try {
+            System.out.println("Data was ordered!");
+            return jdbcTemplate.query("SELECT * FROM student_data ORDER BY id ASC ",
+                    new StudentRowMapper());
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
     }
 
     @Override
     public List<Student> findAll() {
-        return jdbcTemplate.query("SELECT * FROM student_data", new StudentRowMapper());
+        try {
+            return jdbcTemplate.query("SELECT * FROM student_data", new StudentRowMapper());
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
     }
 
     private final class StudentRowMapper implements RowMapper<Student> {
