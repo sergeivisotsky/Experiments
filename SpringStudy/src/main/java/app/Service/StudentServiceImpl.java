@@ -3,7 +3,6 @@ package app.Service;
 import app.Main;
 import app.db.dao.Student;
 import app.db.dao.StudentDaoImpl;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
