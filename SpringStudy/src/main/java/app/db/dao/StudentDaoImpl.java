@@ -1,6 +1,8 @@
 package app.db.dao;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,8 @@ import java.util.List;
 public class StudentDaoImpl implements StudentDao {
 
     private JdbcTemplate jdbcTemplate;
+
+    private static final Logger logger = Logger.getLogger(StudentDaoImpl.class);
 
     @Autowired
     public StudentDaoImpl(JdbcTemplate jdbcTemplate) {
@@ -30,7 +34,7 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public void deleteRecord(long id, String name, String surname) {
-        jdbcTemplate.update("DELETE FROM student_data WHERE id" + " = ? " +
+        jdbcTemplate.update("DELETE FROM student_data WHERE id" + " = ?" +
                 "AND name" + " = ? " + "AND surname" + " = ?", id, name, surname);
         System.out.println("Record was deleted!");
     }
@@ -47,8 +51,13 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public Student findById(long id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM student_data WHERE id = ?",
-                new StudentRowMapper(), id);
+        try {
+            return jdbcTemplate.queryForObject("SELECT * FROM student_data WHERE id = ?",
+                    new StudentRowMapper(), id);
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
     }
 
     @Override

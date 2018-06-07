@@ -3,12 +3,12 @@ package app.Service;
 import app.Main;
 import app.db.dao.Student;
 import app.db.dao.StudentDaoImpl;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service("StudentService")
 public class StudentServiceImpl implements StudentServicе {
@@ -16,7 +16,7 @@ public class StudentServiceImpl implements StudentServicе {
     private Student student;
 
     private static final Logger logger =
-            Logger.getLogger("StudentServiceImpl.class");
+            Logger.getLogger(StudentServiceImpl.class);
 
     @Autowired
     public StudentServiceImpl(StudentDaoImpl studentDao,
@@ -59,7 +59,7 @@ public class StudentServiceImpl implements StudentServicе {
             studentDao.addRecord(new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram));
         } catch (IOException e) {
-            logger.info("Input-output error");
+            System.out.println("Input-output error");
         }
     }
 
@@ -90,7 +90,7 @@ public class StudentServiceImpl implements StudentServicе {
 
             studentDao.deleteRecord(id, name, surname);
         } catch (IOException e) {
-            logger.info("Input-output error");
+            System.out.println("Input-output error");
         }
     }
 
@@ -159,7 +159,7 @@ public class StudentServiceImpl implements StudentServicе {
 
             studentDao.recordModification(student, student.getId());
         } catch (IOException e) {
-            logger.info("Input-output error");
+            System.out.println("Input-output error");
         }
     }
 
@@ -171,7 +171,7 @@ public class StudentServiceImpl implements StudentServicе {
                     Main.reader.readLine()));
             System.out.println(student.toString());
         } catch (IOException e) {
-            logger.info("Input-output error");
+            System.out.println("Input-output error");
         }
     }
 

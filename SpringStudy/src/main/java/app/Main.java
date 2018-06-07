@@ -2,12 +2,12 @@ package app;
 
 import app.Service.StudentServicе;
 import app.db.Config;
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.logging.Logger;
 
 public class Main {
     private static class MainHolder {
@@ -18,7 +18,7 @@ public class Main {
         return MainHolder.main;
     }
 
-    private static final Logger logger = Logger.getLogger("Main.class");
+    private static final Logger logger = Logger.getLogger(Main.class);
 
     public static final BufferedReader reader =
             new BufferedReader(new InputStreamReader(System.in));
@@ -68,8 +68,7 @@ public class Main {
                 yesNoAnswer = reader.readLine().toLowerCase();
             } while (yesNoAnswer.equals("y"));
         } catch (Exception e) {
-//            System.out.println(e.getMessage());
-            logger.info("Input-output error");
+            System.out.println("Input-output error");
         }
     }
 }
