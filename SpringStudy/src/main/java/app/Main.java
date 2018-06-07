@@ -2,11 +2,13 @@ package app;
 
 import app.Service.StudentServicе;
 import app.db.Config;
+import org.apache.commons.logging.Log;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.logging.Logger;
 
 public class Main {
     private static class MainHolder {
@@ -17,7 +19,9 @@ public class Main {
         return MainHolder.main;
     }
 
-    public BufferedReader reader =
+    private static final Logger logger = Logger.getLogger("Main.class");
+
+    public static final BufferedReader reader =
             new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) {
@@ -32,10 +36,11 @@ public class Main {
                 System.out.println("1: Display all records");
                 System.out.println("2: Add record");
                 System.out.println("3: Delete record");
-                System.out.println("4: Get record by ID");
-                System.out.println("5: Order records by ID");
+                System.out.println("4: Modify record");
+                System.out.println("5: Find record by ID");
+                System.out.println("6: Order records by ID");
                 System.out.print("Option: ");
-                option = Integer.parseInt(getMain().reader.readLine());
+                option = Integer.parseInt(reader.readLine());
 
                 switch (option) {
                     case 1:
@@ -48,9 +53,12 @@ public class Main {
                         studentServicе.deleteRecord();
                         break;
                     case 4:
-                        studentServicе.getRecordById();
+                        studentServicе.modifyRecord();
                         break;
                     case 5:
+                        studentServicе.findStudentWrapper();
+                        break;
+                    case 6:
                         studentServicе.orderById();
                         break;
                     default:
@@ -58,10 +66,11 @@ public class Main {
                 }
 
                 System.out.print("Continue (y/n)? ");
-                yesNoAnswer = getMain().reader.readLine().toLowerCase();
+                yesNoAnswer = reader.readLine().toLowerCase();
             } while (yesNoAnswer.equals("y"));
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
+            logger.info("Input-output error");
         }
     }
 }

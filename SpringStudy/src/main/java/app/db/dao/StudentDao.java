@@ -10,7 +10,9 @@ public interface StudentDao {
 
     void deleteRecord(long id, String name, String surname);
 
-    List<Student> getRecordByID(long id);
+    void recordModification(Student student, long id);
+
+    Student findById(long id);
 
     List<Student> orderById();
 

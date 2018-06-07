@@ -36,14 +36,19 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<Student> getRecordByID(long id) {
-//        try {
-        return jdbcTemplate.query("SELECT * FROM student_data WHERE id = ?",
+    public void recordModification(Student student, long id) {
+        jdbcTemplate.update("REPLACE INTO student_data(id, name, surname, age, " +
+                        "group_number, study_year, study_program) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                id, student.getName(), student.getSurname(),
+                student.getAge(), student.getGroupNumber(), student.getStudyYear(),
+                student.getStudyProgram());
+        System.out.println("Record was updated!");
+    }
+
+    @Override
+    public Student findById(long id) {
+        return jdbcTemplate.queryForObject("SELECT * FROM student_data WHERE id = ?",
                 new StudentRowMapper(), id);
-        /*} catch (EmptyResultDataAccessException e) {
-            System.out.println("No data with such a parameter found!");
-            return null;
-        }*/
     }
 
     @Override

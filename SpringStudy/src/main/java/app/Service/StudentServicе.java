@@ -1,5 +1,6 @@
 package app.Service;
 
+import app.db.dao.Student;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -10,7 +11,11 @@ public interface StudentServicе {
 
     void deleteRecord();
 
-    void getRecordById();
+    void modifyRecord();
+
+    void findStudentWrapper();
+
+    Student findStudent(long id);
 
     void orderById();
 }

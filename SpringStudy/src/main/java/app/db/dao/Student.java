@@ -99,10 +99,4 @@ public class Student {
                 ", studyProgram = '" + studyProgram + '\'' +
                 '}';
     }
-
-    /*@Override
-    public String toString() {
-        return String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s",
-                id, name, surname, age, groupNumber, studyYear, studyProgram + "\n");
-    }*/
 }

@@ -8,14 +8,21 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service("StudentService")
 public class StudentServiceImpl implements StudentServicе {
     private StudentDaoImpl studentDao;
+    private Student student;
+
+    private static final Logger logger =
+            Logger.getLogger("StudentServiceImpl.class");
 
     @Autowired
-    public StudentServiceImpl(StudentDaoImpl studentDao) {
+    public StudentServiceImpl(StudentDaoImpl studentDao,
+                              Student student) {
         this.studentDao = studentDao;
+        this.student = student;
     }
 
     @Override
@@ -23,36 +30,36 @@ public class StudentServiceImpl implements StudentServicе {
         try {
             System.out.print("User id: ");
             long id = Long.parseLong(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Name: ");
             String name = textFormat(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Surname: ");
             String surname = textFormat(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Age: ");
             int age = Integer.parseInt(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Group number: ");
             int groupNumber = Integer.parseInt(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Study year: ");
             int studyYear = Integer.parseInt(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Study program: ");
             String studyProgram = textFormat(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             studentDao.addRecord(new Student(id, name, surname,
                     age, groupNumber, studyYear, studyProgram));
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            logger.info("Input-output error");
         }
     }
 
@@ -60,9 +67,8 @@ public class StudentServiceImpl implements StudentServicе {
     public void retrieveData() {
         List<Student> students = studentDao.findAll();
 
-        for (Student student : students) {
+        for (Student student : students)
             System.out.println(student);
-        }
     }
 
     @Override
@@ -72,37 +78,106 @@ public class StudentServiceImpl implements StudentServicе {
 
             System.out.print("Id: ");
             long id = Long.parseLong(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Name: ");
             String name = textFormat(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             System.out.print("Surname: ");
             String surname = textFormat(
-                    Main.getMain().reader.readLine());
+                    Main.reader.readLine());
 
             studentDao.deleteRecord(id, name, surname);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            logger.info("Input-output error");
         }
     }
 
     @Override
-    public void getRecordById() {
+    public void modifyRecord() {
         try {
-            System.out.print("Id: ");
-            long id = Long.parseLong(
-                    Main.getMain().reader.readLine());
+            System.out.print("User id: ");
+            student = findStudent(Long.parseLong(
+                    Main.reader.readLine()));
 
-            List<Student> students =
-                    studentDao.getRecordByID(id);
-            for (Student student : students) {
-                System.out.println(student);
-            }
+            int option;
+            boolean closeMod = false;
+            do {
+                System.out.println("Parameter to modify: ");
+                System.out.println("1: id (Do not work!!!)");
+                System.out.println("2: name");
+                System.out.println("3: surname");
+                System.out.println("4: age");
+                System.out.println("5: group number");
+                System.out.println("6: study year");
+                System.out.println("7: study program");
+                System.out.println("0: Close modification mode");
+
+                System.out.print("Answer: ");
+                option = Integer.parseInt(
+                        Main.reader.readLine());
+
+                switch (option) {
+                    case 1:
+                        break;
+                    case 2:
+                        System.out.print("New name: ");
+                        student.setName(
+                                Main.reader.readLine());
+                        break;
+                    case 3:
+                        System.out.print("New surname: ");
+                        student.setSurname(
+                                Main.reader.readLine());
+                        break;
+                    case 4:
+                        System.out.print("New age: ");
+                        student.setAge(Integer.parseInt(
+                                Main.reader.readLine()));
+                        break;
+                    case 5:
+                        System.out.print("New group number: ");
+                        student.setGroupNumber(Integer.parseInt(
+                                Main.reader.readLine()));
+                        break;
+                    case 6:
+                        System.out.print("New study year: ");
+                        student.setStudyYear(Integer.parseInt(
+                                Main.reader.readLine()));
+                        break;
+                    case 7:
+                        System.out.println("New study program: ");
+                        student.setStudyProgram(
+                                Main.reader.readLine());
+                        break;
+                    case 0:
+                        closeMod = true;
+                        break;
+                }
+            } while (!closeMod);
+
+            studentDao.recordModification(student, student.getId());
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            logger.info("Input-output error");
         }
+    }
+
+    @Override
+    public void findStudentWrapper() {
+        try {
+            System.out.print("Student id: ");
+            Student student = findStudent(Long.parseLong(
+                    Main.reader.readLine()));
+            System.out.println(student.toString());
+        } catch (IOException e) {
+            logger.info("Input-output error");
+        }
+    }
+
+    @Override
+    public Student findStudent(long id) {
+        return studentDao.findById(id);
     }
 
     @Override
