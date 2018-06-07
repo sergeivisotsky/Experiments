@@ -2,7 +2,6 @@ package app;
 
 import app.Service.StudentServicе;
 import app.db.Config;
-import org.apache.commons.logging.Log;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
