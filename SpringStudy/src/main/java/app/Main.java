@@ -9,14 +9,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Main {
-    private static class MainHolder {
-        private static final Main main = new Main();
-    }
-
-    public static Main getMain() {
-        return MainHolder.main;
-    }
-
     public static final BufferedReader reader =
             new BufferedReader(new InputStreamReader(System.in));
 
