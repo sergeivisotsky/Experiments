@@ -177,8 +177,8 @@ public class StudentServiceImpl implements StudentServicе {
     }
 
     @Override
-    public void orderById() {
-        List<Student> students = studentDao.orderById();
+    public void orderByName() {
+        List<Student> students = studentDao.orderByName();
         for (Student student : students) {
             System.out.println(student);
         }

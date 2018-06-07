@@ -26,7 +26,7 @@ public class Main {
                 System.out.println("3: Delete record");
                 System.out.println("4: Modify record");
                 System.out.println("5: Find record by ID");
-                System.out.println("6: Order records by ID");
+                System.out.println("6: Order records by name");
                 System.out.print("Option: ");
                 option = Integer.parseInt(reader.readLine());
 
@@ -47,7 +47,7 @@ public class Main {
                         studentServicе.findStudentWrapper();
                         break;
                     case 6:
-                        studentServicе.orderById();
+                        studentServicе.orderByName();
                         break;
                     default:
                         System.out.println("No such an option!");

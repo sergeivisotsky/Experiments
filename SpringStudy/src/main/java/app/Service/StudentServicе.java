@@ -17,5 +17,5 @@ public interface StudentServicе {
 
     Student findStudent(long id);
 
-    void orderById();
+    void orderByName();
 }

@@ -69,10 +69,10 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<Student> orderById() {
+    public List<Student> orderByName() {
         try {
             System.out.println("Data was ordered!");
-            return jdbcTemplate.query("SELECT * FROM student_data ORDER BY id ASC ",
+            return jdbcTemplate.query("SELECT * FROM student_data ORDER BY name ASC",
                     new StudentRowMapper());
         } catch (DataAccessException e) {
             logger.error(e.getMessage());

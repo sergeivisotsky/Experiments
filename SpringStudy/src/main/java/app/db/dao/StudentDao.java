@@ -14,7 +14,7 @@ public interface StudentDao {
 
     Student findById(long id);
 
-    List<Student> orderById();
+    List<Student> orderByName();
 
     List<Student> findAll();
 }
