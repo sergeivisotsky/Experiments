@@ -94,7 +94,7 @@ public class StudentDaoImpl implements StudentDao {
         @Override
         public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
             Student student = new Student();
-            student.setId(rs.getInt("id"));
+            student.setId(rs.getLong("id"));
             student.setName(rs.getString("name"));
             student.setSurname(rs.getString("surname"));
             student.setAge(rs.getInt("age"));

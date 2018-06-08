@@ -93,7 +93,7 @@ public class StudentServiceImpl implements StudentServicе {
     @Override
     public void modifyRecord() {
         try {
-            System.out.print("User id: ");
+            System.out.print("Student id: ");
             student = findStudent(Long.parseLong(
                     Main.reader.readLine()));
 
