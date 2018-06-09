@@ -3,7 +3,7 @@
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:779)
-	at app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
+	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
 	at app.Main.main(Main.java:58)
@@ -13,7 +13,7 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:779)
-	at app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
+	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
 	at app.Main.main(Main.java:58)
@@ -21,7 +21,7 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:779)
-	at app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
+	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
 	at app.Main.main(Main.java:58)
@@ -29,7 +29,7 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:779)
-	at app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
+	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
 	at app.Main.main(Main.java:58)

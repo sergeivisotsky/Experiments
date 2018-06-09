@@ -1,7 +1,21 @@
-*.iml
+*.class
+
+*.classpath
+*.project
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# idea project files
 .idea/*
-/lib/*
-.settings/*
+
+*.iml
+*.eml
+*.userlibraries
+*.db-journal
+
+# Compilation binary files
 /out/*
 /target/*
-data_source.db-journal
