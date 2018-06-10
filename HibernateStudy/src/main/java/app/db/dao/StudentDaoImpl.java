@@ -5,7 +5,7 @@ import java.util.List;
 public class StudentDaoImpl implements StudentDao {
     @Override
     public void addRecord(Student student) {
-        
+
     }
 
     @Override
