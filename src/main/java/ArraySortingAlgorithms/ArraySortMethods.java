@@ -14,7 +14,7 @@ public class ArraySortMethods {
     public static void choiceSort(int[] arrayToSort) {
         int[] array = Arrays.copyOf(arrayToSort, arrayToSort.length);
 
-        System.out.println("Choice sort");
+        System.out.println("Choice quadraticSort");
 
         long start = System.nanoTime();
         int indexMin;
@@ -39,7 +39,7 @@ public class ArraySortMethods {
     public static void bubbleSort(int[] arrayToSort) {
         int[] array = Arrays.copyOf(arrayToSort, arrayToSort.length);
 
-        System.out.println("Bubble sort");
+        System.out.println("Bubble quadraticSort");
 
         long start = System.nanoTime();
         int changeCounter;
@@ -64,7 +64,7 @@ public class ArraySortMethods {
 
         int[] array = Arrays.copyOf(arrayToSort, arrayToSort.length);
 
-        System.out.println("Insert sort sort");
+        System.out.println("Insert quadraticSort quadraticSort");
 
         long start = System.nanoTime();
         int element, indexToInsert;
