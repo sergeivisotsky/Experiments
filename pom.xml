@@ -12,6 +12,7 @@
         <module>SpringStudy</module>
         <module>StudentSystem</module>
         <module>HibernateStudy</module>
+        <module>SpringDataStudy</module>
     </modules>
 
     <build>
