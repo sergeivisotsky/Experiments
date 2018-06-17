@@ -1,4 +1,4 @@
-<jsp:useBean id="name" scope="application" type="Main"/>
+<jsp:useBean id="name" scope="application" type="com.mvcstudy.Main"/>
 <!doctype html>
 <html lang="en">
 <head>

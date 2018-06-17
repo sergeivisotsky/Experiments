@@ -1,4 +1,4 @@
-2018-06-07 16:55:10 ERROR Main:71 - For input string: "ddd"
+2018-06-07 16:55:10 ERROR com.mvcstudy.Main:71 - For input string: "ddd"
 2018-06-07 16:58:54 ERROR StudentDaoImpl:58 - Incorrect result size: expected 1, actual 0
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
@@ -6,9 +6,9 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
-	at app.Main.main(Main.java:58)
-2018-06-07 16:58:54 ERROR Main:71 - 
-2018-06-07 16:59:32 ERROR Main:71 - 
+	at app.com.mvcstudy.Main.main(com.mvcstudy.Main.java:58)
+2018-06-07 16:58:54 ERROR com.mvcstudy.Main:71 -
+2018-06-07 16:59:32 ERROR com.mvcstudy.Main:71 -
 2018-06-07 17:01:02 ERROR StudentDaoImpl:58 - Incorrect result size: expected 1, actual 0
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
@@ -16,7 +16,7 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
-	at app.Main.main(Main.java:58)
+	at app.com.mvcstudy.Main.main(com.mvcstudy.Main.java:58)
 2018-06-07 17:01:13 ERROR StudentDaoImpl:58 - Incorrect result size: expected 1, actual 0
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
@@ -24,7 +24,7 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
-	at app.Main.main(Main.java:58)
+	at app.com.mvcstudy.Main.main(com.mvcstudy.Main.java:58)
 2018-06-07 17:01:31 ERROR StudentDaoImpl:58 - Incorrect result size: expected 1, actual 0
 org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
 	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:97)
@@ -32,5 +32,5 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 	at app.app.db.dao.StudentDaoImpl.findById(StudentDaoImpl.java:55)
 	at app.Service.StudentServiceImpl.findStudent(StudentServiceImpl.java:180)
 	at app.Service.StudentServiceImpl.findStudentWrapper(StudentServiceImpl.java:170)
-	at app.Main.main(Main.java:58)
+	at app.com.mvcstudy.Main.main(com.mvcstudy.Main.java:58)
 2018-06-07 17:02:30 ERROR StudentDaoImpl:58 - Incorrect result size: expected 1, actual 0
