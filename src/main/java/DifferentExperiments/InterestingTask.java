@@ -6,9 +6,9 @@ public class InterestingTask {
         Integer b = 300;
 
         if (a == b) {
-            System.out.println("YES");
+            System.out.println("yes");
         } else {
-            System.out.println("NO");
+            System.out.println("no");
         }
     }
 }
