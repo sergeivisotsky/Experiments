@@ -6,6 +6,7 @@
 
     <persistence-unit name="employeeManager">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<exclude-unlisted-classes>false</exclude-unlisted-classes>-->
         <class>jpa.Employee</class>
         <properties>
             <property name="javax.persistence.schema.schema-generation.database.action" value="drop-and-create"/>
