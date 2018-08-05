@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 import java.util.Date;
 
 public class Main {
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory =
                 new Persistence.createEntityManagerFactory("employeeManager");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -25,5 +25,5 @@ public class Main {
 
         entityManager.close();
         entityManagerFactory.close();
-    }*/
+    }
 }
