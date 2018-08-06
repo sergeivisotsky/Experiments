@@ -14,8 +14,8 @@ class FileUploader {
 
     private static final String SERVER = "127.0.0.1";
     private static final int PORT = 21;
-    private static final String USERNAME = "rtudoc";
-    private static final String PASSWORD = "rtudoc";
+    private static final String USERNAME = "demouser";
+    private static final String PASSWORD = "demopswd";
 
     private FTPClient ftpClient = new FTPClient();
 
