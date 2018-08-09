@@ -67,6 +67,7 @@ class FileOperations {
             } else {
                 LOGGER.error("Not downloaded");
             }
+
             outputStream.close();
         } catch (IOException e) {
             LOGGER.error(e);
