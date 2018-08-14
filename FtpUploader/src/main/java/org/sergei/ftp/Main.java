@@ -24,7 +24,7 @@ class FileOperations {
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
             File localFile = new File("D:/Users/Sergei/Desktop/demo_doc.bat");
-            String remoteFile = "demo_dod.bat";
+            String remoteFile = "demo_doc.bat";
             InputStream inputStream = new FileInputStream(localFile);
             boolean done = ftpClient.storeFile(remoteFile, inputStream);
 
