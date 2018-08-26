@@ -12,6 +12,7 @@
         <module>FtpUploader</module>
         <module>StudentSystem</module>
         <module>JpaStudy</module>
+        <module>JettyStudy</module>
     </modules>
 
     <build>
