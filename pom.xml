@@ -14,6 +14,7 @@
         <module>JpaStudy</module>
         <module>JettyStudy</module>
         <module>Exceptions</module>
+        <module>jee-ejb</module>
     </modules>
 
     <build>
