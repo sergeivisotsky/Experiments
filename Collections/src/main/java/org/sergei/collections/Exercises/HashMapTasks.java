@@ -1,6 +1,9 @@
-package Collections.Exercises;
+package org.sergei.collections.Exercises;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class HashMapTasks {
     static class FirstTask {

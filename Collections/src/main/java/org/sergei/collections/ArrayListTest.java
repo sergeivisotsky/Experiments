@@ -1,4 +1,4 @@
-package Collections;
+package org.sergei.collections;
 
 import java.io.BufferedReader;
 import java.io.IOException;

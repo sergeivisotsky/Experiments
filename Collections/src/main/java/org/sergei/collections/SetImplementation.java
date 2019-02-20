@@ -1,4 +1,4 @@
-package Collections;
+package org.sergei.collections;
 
 import java.util.Set;
 

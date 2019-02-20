@@ -1,4 +1,4 @@
-package Collections.Exercises;
+package org.sergei.collections.Exercises;
 
 import java.util.LinkedList;
 import java.util.Random;

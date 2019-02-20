@@ -15,6 +15,7 @@
         <module>JettyStudy</module>
         <module>Exceptions</module>
         <module>jee-ejb</module>
+        <module>Collections</module>
     </modules>
 
     <build>
