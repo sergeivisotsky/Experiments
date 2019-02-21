@@ -4,32 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Experiments</groupId>
-    <artifactId>Experiments</artifactId>
+    <groupId>java-experiments</groupId>
+    <artifactId>java-experiments</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>FtpUploader</module>
-        <module>StudentSystem</module>
-        <module>JpaStudy</module>
-        <module>JettyStudy</module>
-        <module>Exceptions</module>
-        <module>jee-ejb</module>
-        <module>Collections</module>
-    </modules>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>file-operations</module>
+        <module>ftp-uploader</module>
+        <module>jpa-study</module>
+        <module>jetty-study</module>
+        <module>exceptions</module>
+        <module>jee-ejb</module>
+        <module>collections</module>
+    </modules>
 
     <properties>
         <kotlin.version>1.2.31</kotlin.version>
@@ -65,4 +53,17 @@
             <version>${kotlin.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -17,5 +17,5 @@
 *.db-journal
 
 # Compilation binary files
-/out/*
-/target/*
+*/out/*
+*/target/*
