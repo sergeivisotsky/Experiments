@@ -1,4 +1,4 @@
-package org.sergei.collections.Graph;
+package org.sergei.collections.graph;
 
 import java.util.List;
 

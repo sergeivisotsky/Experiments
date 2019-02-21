@@ -1,4 +1,4 @@
-package Functionality;
+package org.sergei.files;
 
 public class Constants {
     public static final String FILE_DIR = "D:/Users/Sergei/Documents/JavaProjects/" +

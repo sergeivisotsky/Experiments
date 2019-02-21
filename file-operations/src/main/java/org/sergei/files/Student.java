@@ -1,4 +1,4 @@
-package Functionality;
+package org.sergei.files;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package org.sergei.collections.Graph;
+package org.sergei.collections.graph;
 
 public class Edge {
     private final int id;

@@ -1,4 +1,4 @@
-package org.sergei.collections.Exercises;
+package org.sergei.collections.exercises;
 
 import java.util.ArrayList;
 import java.util.Collections;

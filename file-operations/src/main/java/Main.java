@@ -1,5 +1,5 @@
-import Functionality.core.MainFunctions;
-import Functionality.core.TemplateInformation;
+import org.sergei.files.core.MainFunctions;
+import org.sergei.files.core.TemplateInformation;
 
 import java.io.IOException;
 

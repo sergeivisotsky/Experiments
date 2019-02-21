@@ -1,4 +1,4 @@
-package org.sergei.collections.Exercises;
+package org.sergei.collections.exercises;
 
 import java.util.Collection;
 import java.util.HashMap;

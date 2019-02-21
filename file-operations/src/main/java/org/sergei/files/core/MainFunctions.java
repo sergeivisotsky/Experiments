@@ -1,6 +1,6 @@
-package Functionality.core;
+package org.sergei.files.core;
 
-import Functionality.Student;
+import org.sergei.files.Student;
 
 import java.io.*;
 

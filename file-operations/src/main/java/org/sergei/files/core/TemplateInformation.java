@@ -1,7 +1,7 @@
-package Functionality.core;
+package org.sergei.files.core;
 
-import Functionality.Constants;
-import Functionality.Student;
+import org.sergei.files.Constants;
+import org.sergei.files.Student;
 
 import java.io.*;
 import java.util.ArrayList;
