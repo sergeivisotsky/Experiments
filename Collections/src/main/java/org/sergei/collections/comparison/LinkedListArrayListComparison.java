@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Main difference between LinkedList and ArrayList is that in LinkedList elements are connected using
  * references next, prev while in ArrayList is a dynamic array where all elements are stored into the array.
+ * <p>
  * Another facts:
  * LinkedList is faster due to array is not needed
  *
