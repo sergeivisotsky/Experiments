@@ -10,6 +10,12 @@ import java.util.List;
  * <p>
  * Another facts:
  * LinkedList is faster due to array is not needed
+ * <p>
+ * When to use each of those:
+ * Insert and remove operations are faster in LinkedList. O(1)
+ * And if it is required to frequently add or remove elements LinkedList gonna be the best choice
+ * Search operation in ArrayList if faster O(1) and if there are not quiet much operations to
+ * frequently add and remove elements than an ArrayList gonna be the best choice
  *
  * @author Sergei Visotsky
  */
