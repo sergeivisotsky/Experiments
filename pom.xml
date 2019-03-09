@@ -15,7 +15,6 @@
         <module>jpa-study</module>
         <module>jetty-study</module>
         <module>exceptions</module>
-        <module>jee-ejb</module>
         <module>collections</module>
     </modules>
 
