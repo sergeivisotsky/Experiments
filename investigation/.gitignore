@@ -1,0 +1,23 @@
+*.class
+
+# Eclipse
+*.classpath
+*.project
+.settings/*
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# idea project files
+.idea/*
+
+*.iml
+*.eml
+*.userlibraries
+*.db-journal
+
+# Compilation binary files
+*/out/*
+*/target/*
