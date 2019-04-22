@@ -1,25 +1,23 @@
 *.class
 
+# Eclipse
 *.classpath
 *.project
+.settings/*
 
 # Package Files #
 *.jar
 *.war
 *.ear
 
-# idea project multipartFile
+# idea project files
 .idea/*
 
 *.iml
 *.eml
 *.userlibraries
-*.log
 *.db-journal
-*.tmp
-*.zip
-*~$_example.docx
 
-# Compilation binary multipartFile
-/out/*
-/target/*
+# Compilation binary files
+*/out/*
+*/target/*
