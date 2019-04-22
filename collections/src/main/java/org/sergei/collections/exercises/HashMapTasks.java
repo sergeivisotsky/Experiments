@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("all")
 public class HashMapTasks {
     static class FirstTask {
         public static void main(String[] args) {

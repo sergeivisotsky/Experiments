@@ -4,54 +4,53 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>java-experiments</groupId>
+    <groupId>org.sergei</groupId>
     <artifactId>java-experiments</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+	<name>Java experiements</name>
+	<description>A huge amount of Java tasks and experiments to learn Java</description>
+
     <modules>
         <module>file-operations</module>
         <module>ftp-uploader</module>
-        <module>jpa-study</module>
         <module>jetty-study</module>
         <module>exceptions</module>
         <module>collections</module>
     </modules>
 
-    <properties>
-        <kotlin.version>1.2.31</kotlin.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.14.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+    	<dependencies>
+	    	<dependency>
+	            <groupId>junit</groupId>
+	            <artifactId>junit</artifactId>
+	            <version>4.12</version>
+	            <scope>test</scope>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.testng</groupId>
+	            <artifactId>testng</artifactId>
+	            <version>6.14.2</version>
+	            <scope>test</scope>
+	        </dependency>
+    		<dependency>
+	            <groupId>log4j</groupId>
+	            <artifactId>log4j</artifactId>
+	            <version>1.2.17</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>slf4j-simple</artifactId>
+	            <version>1.7.21</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>slf4j-api</artifactId>
+	            <version>1.7.21</version>
+	        </dependency>
+    	</dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -59,8 +58,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>

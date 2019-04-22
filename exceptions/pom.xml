@@ -6,11 +6,13 @@
     
     <parent>
         <artifactId>java-experiments</artifactId>
-        <groupId>java-experiments</groupId>
+        <groupId>org.sergei</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>exceptions</artifactId>
 
+	<name>Exceptions</name>
+	<description>Java exceptions</description>
 
 </project>

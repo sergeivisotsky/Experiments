@@ -105,6 +105,8 @@ public class MainFunctions {
                 switch (option) {
                     case 1:
                         System.out.print("Old name: ");
+
+                        @SuppressWarnings("unused")
                         String oldName = reader.readLine();
                         break;
                     case 2:

@@ -6,11 +6,13 @@
     
     <parent>
         <artifactId>java-experiments</artifactId>
-        <groupId>java-experiments</groupId>
+        <groupId>org.sergei</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>file-operations</artifactId>
 
+	<name>File operations</name>
+	<description>Operations that can be performed with files</description>
 
 </project>

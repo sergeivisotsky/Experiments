@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.TreeSet;
 
+@SuppressWarnings("all")
 public class TreeSetTasks {
     private static BufferedReader br =
             new BufferedReader(new InputStreamReader(System.in));
