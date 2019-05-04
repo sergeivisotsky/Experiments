@@ -1,4 +1,4 @@
-package org.sergei.investigation.varargs;
+package org.sergei.investigation.experiments;
 
 public class Varargs {
     

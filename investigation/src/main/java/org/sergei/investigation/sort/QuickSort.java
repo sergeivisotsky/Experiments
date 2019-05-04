@@ -1,4 +1,4 @@
-package org.sergei.investigation.array.algorithms.searchsort.sort;
+package org.sergei.investigation.sort;
 
 public class QuickSort {
 

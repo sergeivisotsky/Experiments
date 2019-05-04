@@ -1,4 +1,4 @@
-package org.sergei.investigation.array.algorithms.searchsort.search;
+package org.sergei.investigation.search;
 
 import java.io.BufferedReader;
 import java.io.IOException;
