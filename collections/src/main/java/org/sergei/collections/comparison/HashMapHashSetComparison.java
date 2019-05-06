@@ -5,9 +5,10 @@ import java.util.HashSet;
 import java.util.Map;
 
 /**
- * The first difference that can be seen is that in HashMap we are able to use key-value
- * while in HashSet we can hold just only value without key. And what is obvious in HshSet we cannot use Map interface
- * due to is allows to use only key-value byt HashSet allows to hold values only.
+ * The first difference that can be seen is that in HashMap we are able to use
+ * key-value while in HashSet we can hold just only value without key. And what
+ * is obvious in HshSet we cannot use Map interface due to is allows to use only
+ * key-value byt HashSet allows to hold values only.
  * <p>
  * HashMap implemented by Map interface
  *
