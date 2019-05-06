@@ -1,4 +1,4 @@
-package org.sergei.investigation.cpp.buzz.tasks;
+package org.sergei.investigation.cppbuzz;
 
 import java.util.Arrays;
 

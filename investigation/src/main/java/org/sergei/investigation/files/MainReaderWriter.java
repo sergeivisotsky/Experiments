@@ -1,4 +1,4 @@
-package org.sergei.investigation.file.study;
+package org.sergei.investigation.files;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class MainReaderWriter {
 
     private static void readerFromFile() throws IOException {
-        File file = new File("src\\ExpFileProj\\filesP");
-        final String DIR = file.getAbsolutePath() + "\\Students.txt";
+        File file = new File("src/main/resources/files/");
+        final String DIR = file.getAbsolutePath() + "Students.txt";
         BufferedReader reader =
                 new BufferedReader(
                         new FileReader(DIR));

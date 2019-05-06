@@ -1,12 +1,12 @@
 package org.sergei.investigation.constructors;
 
-public class animals {
+public class Animals {
 
     private int years;
     private int legs;
     private String name;
 
-    animals(int years, int legs, String dogName) {
+    Animals(int years, int legs, String dogName) {
         this.years = years;
         this.legs = legs;
         name = dogName;
@@ -19,7 +19,7 @@ public class animals {
 
 }
 
-interface doings {
+interface Doings {
     void everyone();
     void creation();
 }

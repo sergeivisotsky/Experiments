@@ -1,1 +1,0 @@
-package org.sergei.investigation.objects.classes;

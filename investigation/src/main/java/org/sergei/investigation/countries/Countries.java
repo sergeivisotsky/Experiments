@@ -1,4 +1,4 @@
-package org.sergei.investigation.country.list;
+package org.sergei.investigation.countries;
 
 import java.util.Arrays;
 import java.util.List;

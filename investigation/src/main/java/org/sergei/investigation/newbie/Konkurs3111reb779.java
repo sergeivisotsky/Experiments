@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class konkurs3111reb779 {
+public class Konkurs3111reb779 {
 
     private static volatile int y;
 
@@ -23,9 +23,9 @@ public class konkurs3111reb779 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         if(x<10){
             int n;
-            konkurs3111reb779.y = n = Integer.parseInt(br.readLine());
+            Konkurs3111reb779.y = n = Integer.parseInt(br.readLine());
             b=count(x+1);
-            if(konkurs3111reb779.y!= n)
+            if(Konkurs3111reb779.y!= n)
                 b++;
         }
         return b;

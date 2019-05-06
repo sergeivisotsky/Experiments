@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class phoneBookApp_ArthurApp {
+public class PhoneBookApp_ArthurApp {
     // are string not number
     private static boolean noInteger(String str){
         try{

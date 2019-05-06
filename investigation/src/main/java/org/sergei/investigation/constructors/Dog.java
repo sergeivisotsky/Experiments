@@ -1,12 +1,12 @@
 package org.sergei.investigation.constructors;
 
-public class dog implements doings {
+public class Dog implements Doings {
 
     public static void main(String[] args) {
         int years = 5;
         int legs = 4;
         String name = "Potatoe";
-        animals dog = new animals(years, legs, name);
+        Animals dog = new Animals(years, legs, name);
         dog.DogsGauGau();
     }
 

@@ -1,4 +1,4 @@
-package org.sergei.investigation.anonymous.classes;
+package org.sergei.investigation.anonymous;
 
 public interface PaperCreator {
     void scratchPaper();

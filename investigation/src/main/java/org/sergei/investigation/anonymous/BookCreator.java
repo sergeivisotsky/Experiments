@@ -1,6 +1,6 @@
-package org.sergei.investigation.anonymous.classes;
+package org.sergei.investigation.anonymous;
 
-public class bookCreator {
+public class BookCreator {
 
     public static void main(String[] args) {
         PaperCreator creatorObject = new PaperCreator() {

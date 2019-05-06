@@ -1,4 +1,4 @@
-package org.sergei.investigation.country.list;
+package org.sergei.investigation.countries;
 
 public class Country {
     private String countryCode;

@@ -1,12 +1,10 @@
-package org.sergei.investigation.file.operations;
+package org.sergei.investigation.files;
 
 import java.io.*;
 
 public class App {
     private void fileCreatorAndWriter() throws IOException {
-        final String DIR =
-                "D:\\Users\\Sergei\\Documents\\JavaProjects\\" +
-                        "TestApp\\src\\fileCreatorWriter\\createdFiles";
+        final String DIR = "src/main/resources/files/";
         File fileCreator = new File(DIR, "newFile.txt");
         FileWriter fw = new FileWriter(fileCreator.getAbsoluteFile());
         BufferedWriter bw = new BufferedWriter(fw);

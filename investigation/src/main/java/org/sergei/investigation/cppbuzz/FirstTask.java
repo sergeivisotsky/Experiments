@@ -1,4 +1,4 @@
-package org.sergei.investigation.cpp.buzz.tasks;
+package org.sergei.investigation.cppbuzz;
 
 public class FirstTask {
     public static void main(String[] args) {
