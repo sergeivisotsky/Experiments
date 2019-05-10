@@ -16,8 +16,6 @@
         <module>file-operations</module>
         <module>ftp-uploader</module>
         <module>jetty-study</module>
-        <module>exceptions</module>
-        <module>collections</module>
         <module>investigation</module>
     </modules>
 
